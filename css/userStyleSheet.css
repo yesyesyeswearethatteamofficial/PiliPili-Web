@@ -568,3 +568,291 @@ ol, ul {
 .n {
     margin-bottom: 10px;
 }
+
+.n .n-inner {
+    height: 66px;
+    background: #fff;
+    box-shadow: 0 0 0 1px #eee;
+    border-radius: 0 0 4px 4px;
+    padding: 0 20px;
+    font-size: 0;
+}
+
+.n .n-tab-links {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.n .n-btn {
+    display: inline-block;
+    font-size: 0;
+    line-height: 66px;
+    margin-right: 16px;
+    position: relative;
+    text-decoration: none;
+}
+
+.n .n-btn.active {
+    color: #00a1d6;
+}
+
+.n .n-tab-links .icon {
+    display: inline-block;
+    width: 20px;
+    font-size: 20px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.n .n-text {
+    font-size: 13px;
+}
+
+.n .n-num, .n .n-text {
+    vertical-align: middle;
+}
+
+.n .n-statistics {
+    float: right;
+    height: 66px;
+}
+
+.n .n-data {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    float: left;
+    width: 58px;
+    height: 66px;
+    padding: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.n .n-data .n-data-k {
+    line-height: 14px;
+    font-size: 12px;
+    color: #99a2aa;
+}
+
+.n .n-data .n-data-v {
+    line-height: 16px;
+    margin-top: 5px;
+    color: #222;
+    font-size: 12px;
+}
+
+.n-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 111;
+    transform: translateY(-70px);
+    transition: transform .3s ease;
+}
+
+.n .n-cursor {
+    background: #00a1d6;
+    width: 0;
+    height: 3px;
+    transition: all .2s ease;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+.n-fix .n-avatar {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.n-fix .n-avatar img {
+    display: block;
+    width: 24px;
+}
+
+.n-fix .n-text {
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.page-index .col-1 {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    float: left;
+    padding: 15px 20px;
+    width: 700px;
+}
+
+.section {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 17px;
+    position: relative;
+}
+
+.section-title {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 33px;
+    padding: 0 0 15px;
+    position: relative;
+}
+
+.section-title .t {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.be-tab, .be-tab-item {
+    position: relative;
+}
+
+.page-index .video .be-tab {
+    display: inline-block;
+    line-height: 18px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.section .more {
+    background-position: -310px -405px;
+    border: 1px solid #b8c0cc;
+    border-radius: 4px;
+    color: #6d757a;
+    font-size: 12px;
+    line-height: 22px;
+    transition: border .2s ease;
+    padding: 0 19px 0 10px;
+    top: 6px;
+    right: 0;
+}
+
+.page-index .col-1 .section .more {
+    background-position: -310px -405px;
+}
+
+.be-tab-item {
+    float: left;
+    font-size: 14px;
+    margin-right: 20px;
+    line-height: 28px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.be-tab-item.is-active {
+    color: #00a1d6;
+}
+
+.page-index .video .be-tab-item {
+    padding: 0 0 3px;
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.be-tab-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #ff3c3c;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input, textarea {
+    outline: none;
+}
+
+.page-index .content {
+    max-height: 380px;
+    overflow: hidden;
+}
+
+.page-index .full-rows .content {
+    max-height: 935px;
+}
+
+.small-item {
+    display: block;
+    float: left;
+    width: 160px;
+    position: relative;
+    margin: 0 0 3px;
+    padding: 10px;
+}
+
+.page-index .content .small-item:nth-child(4n+1) {
+    padding-left: 0;
+}
+
+.small-item .cover {
+    background: 50%;
+    background-size: cover;
+    border-radius: 4px;
+    display: block;
+    width: 160px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.small-item .length {
+    background: #111;
+    background: rgba(0,0,0,.5);
+    border-radius: 5px 0 0 0;
+    color: #fff;
+    line-height: 20px;
+    transition: top .2s ease;
+    padding: 0 6px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.small-item .title {
+    display: block;
+    line-height: 20px;
+    height: 38px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.small-item .meta {
+    color: #999;
+    white-space: nowrap;
+    font-size: 0;
+    margin-top: 6px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.small-item .meta>span:first-child {
+    width: 72px;
+}
+
+.small-item .meta>span {
+    display: inline-block;
+    white-space: nowrap;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    overflow: hidden;
+}
