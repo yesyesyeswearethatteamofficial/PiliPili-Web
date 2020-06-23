@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="internationalHeader" class="international-header">
-        <div class="mini-header">
+        <div class="mini-header mini-type">
             <div class="mini-header__content">
                 <div class="nav-link">
                     <ul class="nav-link-ul">
@@ -93,7 +93,79 @@
         </div>
     </div>
     <div id="app" class="owner">
+        <div class="h">
+            <div class="wrapper">
+                <div class="h-forbid" style="display: none">
+                    <div class="f-wrap">
+                        <i class="f-icon"></i>
+                        <span class="f-txt">该账号封禁中</span>
+                    </div>
+                </div>
+                <div class="h-inner" style="background-image: url(../img/test.png)">
+                    <div class="h-user">
+                        <div class="h-info clearfix">
+                            <div class="h-avatar">
+                                <img src="../img/test.png" class="h-avatar">
+                                <a target="_blank" href="" class="avatar-cover">更换头像</a>
+                                <span class="avatar-m"></span>
+                            </div>
+                            <div class="h-basic">
+                                <div>
+                                    <span class="h-name">nightayk</span>
+                                    <span class="h-ceritification icon"></span>
+                                    <span id="h-gender" class="icon gender"></span>
+                                </div>
+                                <div class="h-basic-spacing">
+                                    <h4 title class="h-sign" style="display: none"></h4>
+                                    <input type="text" placeholder="编辑个性签名" maxlength="60" class="h-sign-2 space_input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-container" style="display: none">
+                <div class="modal-mask"></div>
+                <div class="modal-wrapper">
+                    <div class="modal">
+                        <div class="modal-header">
+                            <i class="modal-header-close iconfont"></i>
+                            <div class="modal-title">个人信息举报</div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="report-popup">
+                                <p class="report-popup-tip">举报内容(可多选)</p>
+                                <ul class="report-popup-list clearfix">
+                                    <li class="report-popup-item">
+                                        <em class="report-popup-item-checkbox"></em>
+                                        <span class="report-popup-item-text">头像违规</span>
+                                    </li>
+                                    <li class="report-popup-item">
+                                        <em class="report-popup-item-checkbox"></em>
+                                        <span class="report-popup-item-text">昵称违规</span>
+                                    </li>
+                                    <li class="report-popup-item">
+                                        <em class="report-popup-item-checkbox"></em>
+                                        <span class="report-popup-item-text">签名违规</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-container modal-footer btn-center">
+                            <a class="btn primary">
+                                <span class="btn-content">确定</span>
+                            </a>
+                            <a class="btn default">
+                                <span class="btn-content">取消</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="navigator" class="n">
 
+        </div>
     </div>
 </body>
 </html>
