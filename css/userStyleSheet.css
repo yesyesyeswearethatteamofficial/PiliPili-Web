@@ -566,7 +566,7 @@ ol, ul {
 }
 
 .n {
-    margin-bottom: 10px;
+    margin-bottom: 70px;
 }
 
 .n .n-inner {
@@ -582,15 +582,17 @@ ol, ul {
     display: inline-block;
     font-size: 0;
     vertical-align: middle;
+    margin-left: -42px;
 }
 
 .n .n-btn {
     display: inline-block;
     font-size: 0;
-    line-height: 66px;
+    line-height: 10px;
     margin-right: 16px;
     position: relative;
     text-decoration: none;
+    top:38px;
 }
 
 .n .n-btn.active {
@@ -599,18 +601,29 @@ ol, ul {
 
 .n .n-tab-links .icon {
     display: inline-block;
-    width: 20px;
+    width: 24px;
+    height: 24px;
     font-size: 20px;
     margin-right: 4px;
-    vertical-align: middle;
+    vertical-align: bottom;
+}
+
+.n .n-cursor {
+    background: #00a1d6;
+    width: 64px;
+    height: 3px;
+    transition: all .2s ease;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
 }
 
 .n .n-text {
     font-size: 13px;
 }
 
-.n .n-num, .n .n-text {
-    vertical-align: middle;
+.n .n-num {
+    vertical-align: 250%;
 }
 
 .n .n-statistics {
@@ -620,7 +633,7 @@ ol, ul {
 
 .n .n-data {
     display: -ms-flexbox;
-    display: flex;
+    display: block;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: center;
@@ -628,7 +641,7 @@ ol, ul {
     float: left;
     width: 58px;
     height: 66px;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
     box-sizing: border-box;
     text-decoration: none;
@@ -655,16 +668,6 @@ ol, ul {
     z-index: 111;
     transform: translateY(-70px);
     transition: transform .3s ease;
-}
-
-.n .n-cursor {
-    background: #00a1d6;
-    width: 0;
-    height: 3px;
-    transition: all .2s ease;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
 }
 
 .n-fix .n-avatar {
@@ -695,7 +698,7 @@ ol, ul {
     border-radius: 4px;
     float: left;
     padding: 15px 20px;
-    width: 700px;
+    width: 1058px;
 }
 
 .section {
@@ -716,10 +719,22 @@ ol, ul {
 .section-title .t {
     display: inline-block;
     vertical-align: middle;
+    text-decoration: none;
+    color: #000;
 }
 
 .be-tab, .be-tab-item {
     position: relative;
+}
+
+.be-tab-cursor {
+    background: #00a1d6;
+    width: 52px;
+    height: 3px;
+    transition: all .2s ease;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
 }
 
 .page-index .video .be-tab {
@@ -737,13 +752,15 @@ ol, ul {
     font-size: 12px;
     line-height: 22px;
     transition: border .2s ease;
-    padding: 0 19px 0 10px;
+    padding: 2px 7px 2px 7px;
     top: 6px;
     right: 0;
 }
 
 .page-index .col-1 .section .more {
     background-position: -310px -405px;
+    text-decoration: none;
+    position: absolute;
 }
 
 .be-tab-item {
@@ -763,6 +780,7 @@ ol, ul {
     padding: 0 0 3px;
     margin-right: 15px;
     font-size: 12px;
+    top: -8px;
 }
 
 .be-tab-input {
@@ -833,6 +851,8 @@ input, textarea {
     height: 38px;
     margin-top: 6px;
     overflow: hidden;
+    text-decoration: none;
+    color: #000;
 }
 
 .small-item .meta {
