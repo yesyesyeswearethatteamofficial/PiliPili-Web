@@ -62,17 +62,17 @@
                                 <a href="" target="_blank"><span class="name">消息</span> </a>
                             </div>
                         </div>
-                        <div class="item">
+                        <!--div class="item">
                             <div class="nav-item">
                                 <a href="" target="_blank"><span class="name">动态</span> </a>
                             </div>
-                        </div>
+                        </div-->
                         <div class="item">
                             <div class="nav-item">
                                 <a href="" target="_blank"><span class="name">收藏</span> </a>
                             </div>
                         </div>
-                        <div class="item">
+                        <!--div class="item">
                             <div class="nav-item">
                                 <a href="" target="_blank"><span class="name">历史</span> </a>
                             </div>
@@ -81,7 +81,7 @@
                             <div class="nav-item">
                                 <a href="" target="_blank"><span class="name">创作中心</span> </a>
                             </div>
-                        </div>
+                        </div-->
                     </div>
                     <div>
                         <span>
@@ -105,7 +105,7 @@
                     <div class="h-user">
                         <div class="h-info clearfix">
                             <div class="h-avatar">
-                                <img src="../img/test.png" class="h-avatar">
+                                <img src="../img/test.png" class="h-avatar-img">
                                 <a target="_blank" href="" class="avatar-cover">更换头像</a>
                                 <span class="avatar-m"></span>
                             </div>
@@ -120,6 +120,11 @@
                                     <input type="text" placeholder="编辑个性签名" maxlength="60" class="h-sign-2 space_input">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="h-version">
+                        <div class="h-v-btn">
+                            <span>上传背景</span>
                         </div>
                     </div>
                 </div>
@@ -165,7 +170,7 @@
         </div>
         <div id="navigator" class="n">
             <div class="wrapper">
-                <div class="n-inner clearfix" style="background-image: url(../img/test.png);background-position-y: 100%">
+                <div class="n-inner clearfix" style="background-image: url(../img/test.png);background-position-y: 100%;background-size: cover">
                     <div class="n-tab-links">
                         <a href="" class="n-btn ">
                             <span >
@@ -173,12 +178,12 @@
                             </span>
                             <span class="n-text">主页</span>
                         </a>
-                        <a href="" class="n-btn">
+                        <!--a href="" class="n-btn">
                             <span class="icon">
                                 <img src="../img/ic_dyn.png" class="icon">
                             </span>
                             <span class="n-text">动态</span>
-                        </a>
+                        </a-->
                         <a href="" class="n-btn">
                             <span class="icon">
                                 <img src="../img/ic_con.png" class="icon">
@@ -213,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="n-cursor" style="left: 42px"><!--相邻按钮之间切换光标位置变化：70px--></div>
+                <div class="n-cursor" style="left: 26px"><!--相邻按钮之间切换光标位置变化：70px--></div>
             </div>
         </div>
         <!--div id="navigator-fixed" class="n n-fix">
@@ -301,7 +306,7 @@
                 </div>
             </div>
         </div>
-        <div id="page-fav" class="wrapper">
+        <div id="page-fav" class="wrapper" style="display: none">
             <div class="col-full clearfix">
                 <div class="fav-main section">
                     <div class="fav-header">
@@ -310,7 +315,7 @@
                                 <div id="do-batch" class="filter-item">
                                     <span class="text">批量操作</span>
                                 </div>
-                                <div class="filter-item be-dropdown">
+                                <!--div class="filter-item be-dropdown">
                                     <span class="text">最近收藏</span>
                                     <img src="" class="icon-arrow">
                                     <ul class="be-dropdown-menu" style="left: 1026.6px; top: 452px; transform-origin: center top 0px; display: none;">
@@ -318,17 +323,436 @@
                                         <li class="be-dropdown-item">最多播放</li>
                                         <li class="be-dropdown-item">最新投稿</li>
                                     </ul>
-                                </div>
+                                </div-->
                                 <div class="filter-item search">
                                     <div class="search-input">
                                         <input type="text" placeholder="输入关键词" class="space_input">
-                                        <span title="点击搜索" class="icon icon-search"></span>
+                                        <span title="点击搜索" class="icon icon-search">
+                                            <img src="../img/nav_search_btn.png" class="icon-search">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="fav-content" class="section"></div>
+                    <div id="fav-content" class="fav-content section clearfix">
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-vedio" class="wrapper" style="display: none">
+            <div class="col-full clearfix">
+                <div class="main-content">
+                    <div class="page-head clearfix">
+                        <div class="breadcrumb">
+                            <p class="item cur">我的视频</p>
+                        </div>
+                        <div class="v-filter-line clearfix">
+                            <div class="be-tab">
+                                <ul id="be-tab-inner" class="clearfix">
+                                    <li class="be-tab-item">
+                                        <input type="radio" name="be-tab-2" class="be-tab-input" value="pubdate">
+                                        <span>最新发布</span>
+                                    </li>
+                                    <li class="be-tab-item">
+                                        <input type="radio" name="be-tab-2" class="be-tab-input" value="click">
+                                        <span>最多播放</span>
+                                    </li>
+                                    <li class="be-tab-item">
+                                        <input type="radio" name="be-tab-2" class="be-tab-input" value="stow">
+                                        <span>最多收藏</span>
+                                    </li>
+                                </ul>
+                                <div class="be-tab-cursor" style="left:39px"><!--相邻两个选项left变化76px--></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit-video-type-filter">
+                        <a class="active">全部<span class="count">14</span> </a>
+                        <a>生活<span class="count">14</span> </a>
+                    </div>
+                    <div class="section">
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                        <div data-pid="" class="small-item">
+                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
+                            <div class="meta">
+                                        <span class="play">
+
+                                            19
+                                        </span>
+                                <span class="time">
+
+                                            2020-6-23
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-follow" class="wrapper clearfix">
+            <div class="clearfix col-follow">
+                <div class="follow-sidenav">
+                    <div class="follow-list-container ps">
+                        <ul class="follow-list">
+                            <li class="follow-item cur">
+                                <span class="icon icon-follow">
+                                    <img src="../img/ic_follow.png" class="icon icon-follow">
+                                </span>
+                                <a href="" class="text router-link-active">
+                                    我的关注
+                                </a>
+                                <span class="num router-link-active">8</span>
+                            </li>
+                            <li class="follow-item">
+                                <span class="icon icon-follow">
+                                    <img src="../img/ic_fans.png" class="icon icon-follow">
+                                </span>
+                                <a href="" class="text">
+                                    我的粉丝
+                                </a>
+                                <span class="num">0</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="follow" class="follow-main" style="display: none">
+                    <div class="follow-header follow-header-info">
+                        <div class="breadcrumb clearfix">
+                            <p class="item cur">我的关注</p>
+                        </div>
+                    </div>
+                    <div class="follow-content section">
+                        <div class="search-empty-hint">
+                            <p>你还没有关注用户哦~</p>
+                        </div>
+                        <div class="content">
+                            <ul class="relation-list">
+                                <li class="list-item">
+                                    <a href="" target="_blank" class="cover">
+                                        <img src="../img/test.png" class="cover" alt="nightayk">
+                                    </a>
+                                    <div class="content">
+                                        <a href="" target="_blank" class="title">
+                                            <span class="this-is-vip">nightayk</span>
+                                        </a>
+                                        <p class="auth-description">没有签名</p>
+                                        <div class="fans-action">
+                                            <div class="fans-action-follow">
+                                                <span class="fans-action-text">取消关注</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <a href="" target="_blank" class="cover">
+                                        <img src="../img/test.png" class="cover" alt="nightayk">
+                                    </a>
+                                    <div class="content">
+                                        <a href="" target="_blank" class="title">
+                                            <span class="">nightayk</span>
+                                        </a>
+                                        <p class="auth-description">没有签名</p>
+                                        <div class="fans-action">
+                                            <div class="fans-action-follow">
+                                                <span class="fans-action-text">取消关注</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="fans" class="follow-main">
+                    <div class="follow-header follow-header-info">
+                        <div class="breadcrumb clearfix">
+                            <p class="item cur">我的粉丝</p>
+                        </div>
+                    </div>
+                    <div class="follow-content section">
+                        <div class="search-empty-hint">
+                            <p>你还没有关注用户哦~</p>
+                        </div>
+                        <div class="content">
+                            <ul class="relation-list">
+                                <li class="list-item">
+                                    <a href="" target="_blank" class="cover">
+                                        <img src="../img/test.png" class="cover" alt="nightayk">
+                                    </a>
+                                    <div class="content">
+                                        <a href="" target="_blank" class="title">
+                                            <span class="this-is-vip">nightayk</span>
+                                        </a>
+                                        <p class="auth-description">没有签名</p>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <a href="" target="_blank" class="cover">
+                                        <img src="../img/test.png" class="cover" alt="nightayk">
+                                    </a>
+                                    <div class="content">
+                                        <a href="" target="_blank" class="title">
+                                            <span class="">nightayk</span>
+                                        </a>
+                                        <p class="auth-description">没有签名</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

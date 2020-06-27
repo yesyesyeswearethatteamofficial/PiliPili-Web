@@ -272,6 +272,13 @@ header .nav-search {
     border-radius: 52px;
 }
 
+.h .h-avatar-img {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 48px;
+}
+
 .h .h-avatar .avatar-cover {
     position: absolute;
     top: 0;
@@ -512,6 +519,26 @@ ol, ul {
     vertical-align: middle;
 }
 
+.h .h-version {
+    position: absolute;
+    top: 15px;
+    right: 57px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.h .h-v-btn {
+    background: rgba(0,0,0,.45);
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 30px;
+    transition: all .1s ease;
+    padding: 0 10px;
+    margin-right: -40px;
+}
+
 .modal-wrapper .modal-footer {
     padding: 0 0 30px;
     text-align: center;
@@ -581,7 +608,9 @@ ol, ul {
     display: inline-block;
     font-size: 0;
     vertical-align: middle;
-    margin-left: -42px;
+    left: 28px;
+    position: absolute;
+    bottom: -5px;
 }
 
 .n .n-btn {
@@ -628,6 +657,7 @@ ol, ul {
 .n .n-statistics {
     float: right;
     height: 66px;
+    padding-top: 50px;
 }
 
 .n .n-data {
@@ -657,6 +687,10 @@ ol, ul {
     margin-top: 5px;
     color: #222;
     font-size: 12px;
+}
+
+.n .n-data.router-link-active .n-data-k, .n .n-data.router-link-active .n-data-v {
+    color: #00a1d6;
 }
 
 .n-fix {
@@ -817,7 +851,19 @@ input, textarea {
 }
 
 .page-index .content .small-item:nth-child(4n+1) {
-    padding-left: 0;
+    padding-left: 10px;
+}
+
+.fav-content .small-item:nth-child(6n+1){
+    padding-left: 10px;
+}
+
+.main-content .small-item{
+    width: 156px;
+}
+
+.main-content .small-item:nth-child(7n+1){
+    padding-left: 10px;
 }
 
 .small-item .cover {
@@ -890,9 +936,10 @@ input, textarea {
 
 .fav-main {
     float: left;
-    width: 920px;
+    width: 1098px;
     min-height: 600px;
     border: 1px solid #eee;
+    left: -20px;
 }
 
 .fav-main .fav-header {
@@ -910,7 +957,7 @@ input, textarea {
 
 .fav-main .filter-item {
     float: left;
-    line-height: 30px;
+    line-height: 10px;
     margin-right: 26px;
     font-size: 14px;
     color: #222;
@@ -964,6 +1011,7 @@ input, textarea {
 .fav-main .filter-item.search {
     height: 28px;
     margin: 0;
+    margin-top: -10px;
     font-size: 0;
     border: 1px solid #ccd0d7;
     border-radius: 14px;
@@ -994,8 +1042,291 @@ input, textarea {
     position: absolute;
     right: 0;
     top: 0;
-    width: 18px;
+    width: 28px;
     height: 28px;
     background-position: -1111px -82px;
+    cursor: pointer;
+}
+
+.main-content {
+    float: left;
+    width: 1100px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    margin-left: -20px;
+}
+
+.page-head {
+    position: relative;
+}
+
+.breadcrumb {
+    line-height: 24px;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.breadcrumb .item {
+    display: inline-block;
+    font-size: 18px;
+    color: #6d757a;
+    vertical-align: middle;
+}
+
+.breadcrumb .item.cur {
+    color: #222;
+}
+
+.page-head .v-filter-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.v-filter-line .be-tab {
+    float: left;
+}
+
+.v-filter-line .be-tab .be-tab-cursor{
+    bottom: 0;
+    width: 60px;
+}
+
+.submit-video-type-filter {
+    background: #edf2f9;
+    border-radius: 4px;
+    line-height: 36px;
+    margin: 18px 0 10px;
+    padding: 0 20px;
+}
+
+.submit-video-type-filter a {
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.submit-video-type-filter a.active {
+    color: #00a1d6;
+}
+
+.submit-video-type-filter a .count {
+    color: #aaa;
+    margin-left: 8px;
+}
+
+.main-content>.section {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.col-follow{
+    background: #fff;
+}
+
+.follow-sidenav {
+    position: relative;
+    float: left;
+    width: 160px;;
+    font-size: 14px;
+    color: rgb(34, 34, 34);
+    box-sizing: border-box;
+    border: 1px solid rgb(238, 238, 238);
+}
+
+.follow-sidenav .follow-list-container {
+    position: relative;
+    max-height: 440px;
+    overflow-y: hidden;
+}
+
+.ps {
+    overflow: hidden!important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+
+.follow-sidenav .follow-list-container .follow-list{
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0
+}
+
+.follow-sidenav .follow-list-container .follow-item {
+    color: rgb(0, 0, 0);
+    position: relative;
+    white-space: nowrap;
+    font-size: 0px;
+    transition: background-color 0.3s ease 0s;
+    overflow: hidden;
+}
+
+.follow-sidenav .follow-list-container .follow-item.cur {
+    background-color: rgb(0, 161, 214);
+    color: rgb(255, 255, 255);
+}
+
+.follow-sidenav .follow-list-container .follow-item .icon-follow {
+    width: 20px;
+    height: 18px;
+    margin-left: 10px;
+}
+
+.follow-sidenav .text {
+    display: inline-block;
+    line-height: 44px;
+    width: 78px;
+    margin-right: -10px;
+    margin-left: 10px;
+    font-size: 14px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.follow-sidenav .num {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    color: rgb(153, 162, 170);
+    vertical-align: middle;
+    text-align: center;
+}
+
+.follow-sidenav .follow-list-container .follow-item .router-link-active{
+    color: rgb(255, 255, 255);
+}
+
+.follow-main {
+    float: left;
+    width: 920px;
+    min-height: 600px;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-top: 1px solid rgb(238, 238, 238);
+}
+
+.follow-main .follow-header {
+    margin: 20px 20px 0;
+}
+
+.follow-main .follow-header.follow-header-info {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e9ef;
+}
+
+.follow-content{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.follow-content .search-empty-hint {
+    display: none;
+    background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/asserts/nodata02.png);
+    background-position: center 120px;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    color: #6d757a;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+    padding: 340px 0 80px;
+}
+
+.follow-main .content{
+    padding-bottom: 10px;
+}
+
+.follow-main .relation-list {
+    padding: 0 20px 20px;
+}
+
+.list-item {
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 20px 0;
+    position: relative;
+    line-height: 1;
+}
+
+.list-item img {
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 0 1px #edf2f9;
+    display: block;
+}
+
+.list-item .cover {
+    border-radius: 48px;
+    overflow: visible;
+    margin-left: 0;
+    background: 50%;
+    background-size: cover;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.list-item .content {
+    padding: 0 200px 0 0;
+    position: relative;
+    margin-left: 88px;
+    margin-top: 10px;
+}
+
+.list-item .title {
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.list-item .auth-description {
+    line-height: 14px;
+    font-size: 12px;
+    color: #6d757a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-item .this-is-vip {
+    color: #fb7299;
+}
+
+.fans-action {
+    position: absolute;
+    right: 0;
+    top: 9px;
+}
+
+.fans-action-follow {
+    background-color: #e5e9ef;
+    position: relative;
+    border-radius: 4px;
+    font-size: 0;
+    color: #6d757a;
+    padding: 4px 10px;
+    line-height: 16px;
+    border: 0;
+}
+
+.fans-action-text {
+    line-height: 16px;
+    font-size: 12px;
+    vertical-align: middle;
     cursor: pointer;
 }
