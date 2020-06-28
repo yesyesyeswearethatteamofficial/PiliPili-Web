@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="spm_prefix" content="333.999">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <link rel="stylesheet" href="../css/videoStyleSheet.css">
+    <link rel="stylesheet" href="../css/miniHeader.css">
+    <title>Title</title>
+</head>
+<body>
+    <div id="internationalHeader" class="international-header">
+    <div class="mini-header mini-type">
+        <div class="mini-header__content">
+            <div class="nav-link">
+                <ul class="nav-link-ul">
+                    <!-- <li class="nav-link-item">
+                         <span>
+                             <a href="//www.bilibili.com" class="link">
+                                 <img src="../img/navbar_logo.png"><span class="item">主站</span>
+                             </a>
+                         </span>
+                     </li>-->
+                    <li class="nav-link-item" style="padding-left: 100px">
+                            <span>
+                               <a href="//www.bilibili.com" class="link">
+                                   <div class="item"><img src="../img/nav_download_app.webp" class="mini-avatar"></div><div class="item">下载APP</div>
+                               </a>
+                           </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-search-box">
+                <div class="nav-search">
+                    <form id="nav_searchform">
+                        <div style="display: inline-block">
+                            <input type="text" autocomplete="off" accesskey="s" placeholder="为什么蚊子叮的包这么痒？" class="nav-search-keyword">
+                        </div>
+                        <div class="nav-search-btn">
+                            <button type="button" class="nav-search-submit"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nav-user-center">
+                <div class="user-con">
+                    <div class="item">
+                            <span>
+                                <div class="mini-avatar">
+                                    <img src="../img/test.png" alt class>
+                                </div>
+                            </span>
+                    </div>
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">大会员</span></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">消息</span> </a>
+                        </div>
+                    </div>
+                    <!--div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">动态</span> </a>
+                        </div>
+                    </div-->
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">收藏</span> </a>
+                        </div>
+                    </div>
+                    <!--div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">历史</span> </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">创作中心</span> </a>
+                        </div>
+                    </div-->
+                </div>
+                <div>
+                        <span>
+                            <span class="mini-upload">投稿</span>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="app">
+        <div class="v-wrap">
+            <div class="col-1">
+                <div id="viewboxReport" class="video-info">
+                    <h1 class="video-title"><span class="tit">测试标题</span> </h1>
+                    <div class="video-data">
+                        <span class="a-crumbs">生活</span>
+                        <span>2020-6-22&nbsp;19:30:10</span>
+                    </div>
+                    <div class="video-data">
+                        <span class="view">82播放&nbsp;&nbsp;</span>
+                        <span class="dm">2弹幕</span>
+                        <span class="copyright">未经作者授权，严禁转载</span>
+                    </div>
+                </div>
+                <div id="playerWrap" class="player-warp">
+                    <div class="player-block">
+                        <div class="player">
+                            <div class="pilipili-player relative">
+                                <div class="pilipili-player-area">
+                                    <div class="pilipili-player-video-wrap">
+                                        <div class="pilipili-player-video-state" style="display: block">
+                                            <span class="pilipili-player-video-state-play">
+                                                <span class="bp-svgicon">
+                                                    <img src="../img/state_play.png" class="img-play">
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="pilipili-player-video-panel" style="display: none">
+                                            <div class="pilipili-player-video-panel-image">
+                                                <div class="pilipili-player-video-panel-image-detail"></div>
+                                                <span class="pilipili-player-video-panel-text">播放器初始化中...</span>
+                                            </div>
+                                        </div>
+                                        <video class="video"></video>
+                                        <div class="video-controls">
+                                            <div class="bar">
+                                                <div class="juice">
+
+                                                </div>
+                                            </div>
+                                            <div class="buttons">
+                                                <button class="play-pause play"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pilipili-player-video-bottom-area">
+                                        <div class="pilipili-player-video-sendbar">
+                                            <div class="pilipili-player-video-danmaku-root">
+                                                <div class="pilipili-player-video-danmaku-switch bui bui-switch">
+                                                    <input class="bui-switch-input" type="checkbox">
+                                                </div>
+                                                <div class="pilipili-player-video-inputbar">
+                                                    <div class="pilipili-player-video-inputbar-wrap">
+                                                        <input class="pilipili-player-video-danmaku-input" placeholder="发个弹幕见证当下">
+                                                    </div>
+                                                    <div class="pilipili-player-video-btn-send bui bui-button bui-button-blue">发送</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-toolbar">
+                    <div class="ops">
+                        <span><img src="../img/img_like.png" class="van-icon">108</span>
+                        <span><img src="../img/img_coin.png" class="van-icon">20</span>
+                        <span><img src="../img/img_stow.png" class="van-icon">2</span>
+                    </div>
+                    <div class="appeal-text">稿件投诉</div>
+                </div>
+                <div class="video-desc">
+                    <div class="info">
+                        随便乱写简介的
+                        屑
+                    </div>
+                </div>
+                <div class="comment">
+                    <div>
+                        <div class="b-head">
+                            <span class="results">2</span>
+                            <span>评论</span>
+                        </div>
+                        <div class="b-content">
+                            <div class="bb-comment">
+                                <div class="comment-header clearfix">
+                                </div>
+                                <div class="comment-send">
+                                    <div class="user-face">
+                                        <img src="../img/test.png" class="user-head">
+                                    </div>
+                                    <div class="textarea-container">
+                                        <textarea cols="80" rows="50" placeholder="发条友善的评论"></textarea>
+                                        <button type="submit" class="comment-submit">发表评论</button>
+                                    </div>
+                                </div>
+                                <div class="comment-list">
+                                    <div class="list-item">
+                                    <div class="user-face">
+                                        <a href="" target="_blank">
+                                            <img src="../img/test.png">
+                                        </a>
+                                    </div>
+                                    <div class="con">
+                                        <div class="user">
+                                            <a href="" target="_blank" class="name">nightayk</a>
+                                        </div>
+                                        <p class="text">
+                                            只是试试评论哦\n我
+                                        </p>
+                                        <div class="info">
+                                            <span class="time">2020-06-22 19:34</span>
+                                            <span class="like"><i style="background-image: url(../img/img_like.png)"></i><span>233</span></span>
+                                            <span class="reply btn-hover">回复</span>
+                                            <span class="report btn-hover">举报</span>
+                                        </div>
+                                        <div class="reply-box">
+                                            <div class="reply-item">
+                                                <a href="" target="_blank" class="reply-face"><img src="../img/test.png"></a>
+                                                <div class="reply-con">
+                                                    <div class="user">
+                                                        <a href="" target="_blank" class="name vip-red-name">测试人员</a>
+                                                        <span class="text-con">2333333333333</span>
+                                                    </div>
+                                                </div>
+                                                <div class="info">
+                                                    <span class="time">2020-6-22 19:49</span>
+                                                    <span class="like"><i style="background-image: url(../img/img_like_fin.png)"></i><span>2289</span></span>
+                                                    <span class="reply btn-hover">回复</span>
+                                                    <span class="report btn-hover">举报</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="list-item">
+                                        <div class="user-face">
+                                            <a href="" target="_blank">
+                                                <img src="../img/test.png">
+                                            </a>
+                                        </div>
+                                        <div class="con">
+                                            <div class="user">
+                                                <a href="" target="_blank" class="name">nightayk</a>
+                                            </div>
+                                            <p class="text">
+                                                只是试试评论哦\n我
+                                            </p>
+                                            <div class="info">
+                                                <span class="time">2020-06-22 19:34</span>
+                                                <span class="like"><i style="background-image: url(../img/img_like.png)"></i><span>233</span></span>
+                                                <span class="reply btn-hover">回复</span>
+                                                <span class="report btn-hover">举报</span>
+                                            </div>
+                                            <div class="reply-box">
+                                                <div class="reply-item">
+                                                    <a href="" target="_blank" class="reply-face"><img src="../img/test.png"></a>
+                                                    <div class="reply-con">
+                                                        <div class="user">
+                                                            <a href="" target="_blank" class="name vip-red-name">测试人员</a>
+                                                            <span class="text-con">2333333333333</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="info">
+                                                        <span class="time">2020-6-22 19:49</span>
+                                                        <span class="like"><i style="background-image: url(../img/img_like_fin.png)"></i><span>2289</span></span>
+                                                        <span class="reply btn-hover">回复</span>
+                                                        <span class="report btn-hover">举报</span>
+                                                    </div>
+                                                    <div class="reply-item">
+                                                        <a href="" target="_blank" class="reply-face"><img src="../img/test.png"></a>
+                                                        <div class="reply-con">
+                                                            <div class="user">
+                                                                <a href="" target="_blank" class="name vip-red-name">测试人员</a>
+                                                                <span class="text-con">2333333333333</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="info">
+                                                            <span class="time">2020-6-22 19:49</span>
+                                                            <span class="like"><i style="background-image: url(../img/img_like_fin.png)"></i><span>2289</span></span>
+                                                            <span class="reply btn-hover">回复</span>
+                                                            <span class="report btn-hover">举报</span>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="r-con">
+                <div class="up-info">
+                    <div class="u-face">
+                        <a href="" target="_blank" class="fa">
+                            <img src="../img/test.png" class="fa">
+                        </a>
+                    </div>
+                    <div class="u-info">
+                        <div class="name">
+                            <a href="" target="_blank" class="username vip-red-name">nightayk</a>
+                        </div>
+                        <div class="desc">
+                            测试测试
+                        </div>
+                    </div>
+                    <div class="btn-panel">
+                        <div class="default-btn following">
+                            <span>已关注&nbsp;49</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/video-play.js"></script>
+</body>
+</html>
