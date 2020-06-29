@@ -10,6 +10,14 @@ body{
     overflow-y: scroll;
 }
 
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
 .h {
     position: relative;
     z-index: 10;
@@ -164,6 +172,16 @@ body{
     margin-right: 5px;
     vertical-align: middle;
     background-position: -212px -922px;
+}
+
+.h .gender.female {
+    display: inline-block;
+    background-position: -211px -404px;
+}
+
+.h .gender.male {
+    display: inline-block;
+    background-position: -212px -472px;
 }
 
 .h .h-basic .h-basic-spacing {
@@ -334,6 +352,20 @@ ol, ul {
     font-size: 14px;
     color: #222;
     vertical-align: middle;
+}
+
+.h .h-vipType {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+    padding: 0 5px;
+    background-color: #f45a8d;
+    vertical-align: middle;
+    margin-right: 5px;
+    text-decoration: none;
 }
 
 .h .h-version {
@@ -1146,4 +1178,9 @@ input, textarea {
     font-size: 12px;
     vertical-align: middle;
     cursor: pointer;
+}
+
+.h-basic .icon {
+    display: inline-block;
+    background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/asserts/icons.png);
 }
