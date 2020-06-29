@@ -7,6 +7,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <link rel="stylesheet" href="../css/videoStyleSheet.css">
     <link rel="stylesheet" href="../css/miniHeader.css">
+    <link rel="stylesheet" href="../css/danmuplayer.css">
     <title>Title</title>
 </head>
 <body>
@@ -126,7 +127,7 @@
                                                 <span class="pilipili-player-video-panel-text">播放器初始化中...</span>
                                             </div>
                                         </div>
-                                        <video class="video"></video>
+                                        <!--video id="danmuVideo" class="video danmu-player" style="width: 657px;height: 459px;" src="../testv.mp4"></video>
                                         <div class="video-controls">
                                             <div class="bar">
                                                 <div class="juice">
@@ -136,9 +137,10 @@
                                             <div class="buttons">
                                                 <button class="play-pause play"></button>
                                             </div>
-                                        </div>
+                                        </div-->
+                                        <div id="danmup" class="danmu-player"></div>
                                     </div>
-                                    <div class="pilipili-player-video-bottom-area">
+                                    <!--div class="pilipili-player-video-bottom-area">
                                         <div class="pilipili-player-video-sendbar">
                                             <div class="pilipili-player-video-danmaku-root">
                                                 <div class="pilipili-player-video-danmaku-switch bui bui-switch">
@@ -152,7 +154,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div-->
                                 </div>
                             </div>
                         </div>
@@ -160,9 +162,9 @@
                 </div>
                 <div class="video-toolbar">
                     <div class="ops">
-                        <span><img src="../img/img_like.png" class="van-icon">108</span>
-                        <span><img src="../img/img_coin.png" class="van-icon">20</span>
-                        <span><img src="../img/img_stow.png" class="van-icon">2</span>
+                        <span id="likeVideo" class="unlike"><img src="../img/img_like.png" class="van-icon">108</span>
+                        <span id="coinVideo"><img src="../img/img_coin.png" class="van-icon">20</span>
+                        <span id="stowVideo" class="unstow"><img src="../img/img_stow.png" class="van-icon">2</span>
                     </div>
                     <div class="appeal-text">稿件投诉</div>
                 </div>
@@ -193,49 +195,11 @@
                                 </div>
                                 <div class="comment-list">
                                     <div class="list-item">
-                                    <div class="user-face">
+                                     <div class="user-face">
                                         <a href="" target="_blank">
                                             <img src="../img/test.png">
                                         </a>
                                     </div>
-                                    <div class="con">
-                                        <div class="user">
-                                            <a href="" target="_blank" class="name">nightayk</a>
-                                        </div>
-                                        <p class="text">
-                                            只是试试评论哦\n我
-                                        </p>
-                                        <div class="info">
-                                            <span class="time">2020-06-22 19:34</span>
-                                            <span class="like"><i style="background-image: url(../img/img_like.png)"></i><span>233</span></span>
-                                            <span class="reply btn-hover">回复</span>
-                                            <span class="report btn-hover">举报</span>
-                                        </div>
-                                        <div class="reply-box">
-                                            <div class="reply-item">
-                                                <a href="" target="_blank" class="reply-face"><img src="../img/test.png"></a>
-                                                <div class="reply-con">
-                                                    <div class="user">
-                                                        <a href="" target="_blank" class="name vip-red-name">测试人员</a>
-                                                        <span class="text-con">2333333333333</span>
-                                                    </div>
-                                                </div>
-                                                <div class="info">
-                                                    <span class="time">2020-6-22 19:49</span>
-                                                    <span class="like"><i style="background-image: url(../img/img_like_fin.png)"></i><span>2289</span></span>
-                                                    <span class="reply btn-hover">回复</span>
-                                                    <span class="report btn-hover">举报</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="list-item">
-                                        <div class="user-face">
-                                            <a href="" target="_blank">
-                                                <img src="../img/test.png">
-                                            </a>
-                                        </div>
                                         <div class="con">
                                             <div class="user">
                                                 <a href="" target="_blank" class="name">nightayk</a>
@@ -245,7 +209,7 @@
                                             </p>
                                             <div class="info">
                                                 <span class="time">2020-06-22 19:34</span>
-                                                <span class="like"><i style="background-image: url(../img/img_like.png)"></i><span>233</span></span>
+                                                <span class="like"><img src="../img/img_like.png" class="unlike"><span>233</span></span>
                                                 <span class="reply btn-hover">回复</span>
                                                 <span class="report btn-hover">举报</span>
                                             </div>
@@ -258,31 +222,17 @@
                                                             <span class="text-con">2333333333333</span>
                                                         </div>
                                                     </div>
-                                                    <div class="info">
-                                                        <span class="time">2020-6-22 19:49</span>
-                                                        <span class="like"><i style="background-image: url(../img/img_like_fin.png)"></i><span>2289</span></span>
-                                                        <span class="reply btn-hover">回复</span>
-                                                        <span class="report btn-hover">举报</span>
-                                                    </div>
-                                                    <div class="reply-item">
-                                                        <a href="" target="_blank" class="reply-face"><img src="../img/test.png"></a>
-                                                        <div class="reply-con">
-                                                            <div class="user">
-                                                                <a href="" target="_blank" class="name vip-red-name">测试人员</a>
-                                                                <span class="text-con">2333333333333</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="info">
-                                                            <span class="time">2020-6-22 19:49</span>
-                                                            <span class="like"><i style="background-image: url(../img/img_like_fin.png)"></i><span>2289</span></span>
-                                                            <span class="reply btn-hover">回复</span>
-                                                            <span class="report btn-hover">举报</span>
-                                                        </div>
+                                                <div class="info">
+                                                    <span class="time">2020-6-22 19:49</span>
+                                                    <span class="like"><img src=" ../img/img_like_fin.png" class="liked"><span>2289</span></span>
+                                                    <span class="reply btn-hover">回复</span>
+                                                    <span class="report btn-hover">举报</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -313,7 +263,9 @@
             </div>
          </div>
     </div>
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="../js/video-play.js"></script>
 </body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/danmuplayer.min.js"></script>
+<script src="../js/video-play.js"></script>
+<script src="../js/video-page-act.js"></script>
 </html>

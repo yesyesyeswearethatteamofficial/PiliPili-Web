@@ -83,7 +83,6 @@ input[type=checkbox], input[type=radio] {
     margin-left: 16px;
     display: inline-block;
     font-size: 12px;
-    line-height: 18px;
 }
 
 .player-warp{
@@ -254,9 +253,9 @@ input[type=checkbox], input[type=radio] {
     margin-left: -54px;
 }
 
-.pilipili-player-video-wrap:hover .video-controls{
+/*.pilipili-player-video-wrap:hover .video-controls{
     bottom: 0;
-}
+}*/
 
 .video{
     width: 100%;
@@ -336,7 +335,7 @@ input[type=checkbox], input[type=radio] {
     zoom: 1;
 }
 
-.pilipili-player-video-sendbar .pilipili-player-video-danmaku-root {
+.pilipili-player-video-danmaku-root {
     height: 34px;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -372,7 +371,7 @@ input[type=checkbox], input[type=radio] {
     cursor: pointer;
 }
 
-.pilipili-player-video-sendbar .pilipili-player-video-danmaku-root .pilipili-player-video-danmaku-switch {
+.pilipili-player-video-danmaku-switch {
     position: relative;
     width: 30px;
     height: 30px;
@@ -393,7 +392,7 @@ input[type=checkbox], input[type=radio] {
     z-index: 1;
 }
 
-.pilipili-player-video-sendbar .pilipili-player-video-inputbar {
+.pilipili-player-video-inputbar {
     width: 300px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -910,3 +909,34 @@ bb-comment .comment-list .list-item .text, .comment-pilipili-fold .comment-list 
     width: 156px;
 }
 
+.like img{
+    width: 14px;
+    height: 14px;
+    vertical-align: baseline;
+}
+
+.bb-comment .comment-list .list-item .text, .comment-pilipili-fold .comment-list .list-item .text {
+    line-height: 20px;
+    padding: 2px 0;
+    font-size: 14px;
+    text-shadow: none;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.unlike{
+
+}
+
+.liked{
+
+}
+
+.unstow{
+
+}
+
+.stowed{
+
+}
