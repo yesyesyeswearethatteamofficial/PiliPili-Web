@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="spm_prefix" content="333.999">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <link rel="stylesheet" href="../css/videoFrameStyleSheet.css">
+    <link rel="stylesheet" href="../css/miniHeader.css">
+    <title>Title</title>
+</head>
+<body>
+    <div id="internationalHeader" class="international-header">
+    <div class="mini-header mini-type">
+        <div class="mini-header__content">
+            <div class="nav-link">
+                <ul class="nav-link-ul">
+                    <!-- <li class="nav-link-item">
+                         <span>
+                             <a href="//www.bilibili.com" class="link">
+                                 <img src="../img/navbar_logo.png"><span class="item">主站</span>
+                             </a>
+                         </span>
+                     </li>-->
+                    <li class="nav-link-item" style="padding-left: 100px">
+                            <span>
+                               <a href="//www.bilibili.com" class="link">
+                                   <div class="item"><img src="../img/nav_download_app.webp" class="mini-avatar"></div><div class="item">下载APP</div>
+                               </a>
+                           </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-search-box">
+                <div class="nav-search">
+                    <form id="nav_searchform">
+                        <div style="display: inline-block">
+                            <input type="text" autocomplete="off" accesskey="s" placeholder="为什么蚊子叮的包这么痒？" class="nav-search-keyword">
+                        </div>
+                        <div class="nav-search-btn">
+                            <button type="button" class="nav-search-submit"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nav-user-center">
+                <div class="user-con">
+                    <div class="item">
+                            <span>
+                                <div class="mini-avatar">
+                                    <img src="../img/test.png" alt class>
+                                </div>
+                            </span>
+                    </div>
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">个人中心</span> </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">大会员</span></a>
+                        </div>
+                    </div>
+                    <!--div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">消息</span> </a>
+                        </div>
+                    </div-->
+                    <!--div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">动态</span> </a>
+                        </div>
+                    </div-->
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">收藏</span> </a>
+                        </div>
+                    </div>
+                    <!--div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">历史</span> </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="nav-item">
+                            <a href="" target="_blank"><span class="name">创作中心</span> </a>
+                        </div>
+                    </div-->
+                </div>
+                <div>
+                        <span>
+                            <span class="mini-upload">投稿</span>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="app">
+        <div class="s-right-upload">
+            <div class="upload-box">
+                <div class="cropper-modal">
+                    <div class="modal">
+                        <div class="modal-content">
+                            <div class="video-clip-wrap">
+                                <div class="container-bg">
+                                    <div class="video-container">
+                                        <video src=""></video>
+                                    </div>
+                                </div>
+                                <label class="first change-lb" for="video_input">
+                                    <i></i>
+                                    <span>选择视频</span>
+                                </label>
+                                <div class="reset-video" style="display: none">
+                                    <label>
+                                        <i></i>
+                                        &nbsp;重新选择
+                                    </label>
+                                </div>
+                                <input type="file" id="video_input" style="display:none;" accept="video/mp4,video/mpeg">
+                            </div>
+                            <div class="border-line" style="display: none"></div>
+                            <div class="cover-clip-wrap" style="display: none">
+                                <div class="container-bg">
+                                    <div class="cover-container">
+                                        <img src="">
+                                    </div>
+                                </div>
+                                <label class="second change-lb" for="cover_input">
+                                    <i></i>
+                                    <span>选择图片</span>
+                                </label>
+                                <div class="reset-cover" style="display: none">
+                                    <label>
+                                        <i></i>
+                                        &nbsp;重新选择
+                                    </label>
+                                </div>
+                                <input type="file" id="cover_input" style="display: none" accept="image/jpeg,image/png,image/jpg">
+                            </div>
+                        </div>
+                        <p class="descript">
+                            请选择要上传的视频，仅支持MP4和MPEG格式
+                        </p>
+                        <div class="info-clip-wrap" style="display: none">
+                            <div class="el-form-item">
+                                <label class="el-form-item__label">视频标题</label>
+                                <div class="el-form-item__content">
+                                    <div class="el-input">
+                                        <input autocomplete="off" placeholder="给视频取个好听的名字" type="text" rows="2" maxlength="80" validateevent="true" class="el-input__inner">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="el-form-item">
+                                <label class="el-form-item__label">视频简介</label>
+                                <div class="el-form-item__content">
+                                    <div class="el-textarea">
+                                        <textarea  type="textarea" rows="2" maxlength="233" autocomplete="off" validateevent="true" class="el-textarea__inner"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="el-form-item">
+                                <label class="el-form-item__label">投放分区</label>
+                                <div class="el-form-item__content">
+                                    <div class="el-radio-group">
+                                        <label class="el-radio-button is-active">
+                                            <input type="radio" class="el-radio-button__orig-radio">
+                                            <span class="el-radio-button__inner">综合区</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" value="投稿" class="modal-btn btn-confirm disabled">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/videoFrame.js"></script>
+</html>

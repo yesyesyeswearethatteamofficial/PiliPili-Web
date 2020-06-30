@@ -106,31 +106,31 @@
                 <div class="s-left">
                     <span class="s-title">个人中心</span>
                     <ul class="s-ul">
-                        <li class="s-list on router-link-active">
+                        <li class="s-list s-left-home on router-link-active">
                             <i class="s-icon icon-0"></i>
                             <span class="s-nav-name">
                                 首<b style="width:28px; display:inline-block"></b>页
                             </span>
                         </li>
-                        <li class="s-list">
+                        <li class="s-list s-left-vip">
                             <i class="s-icon icon-1"></i>
                             <span class="s-nav-name">
                                 <span style="letter-spacing: 7px">大会员</span>
                             </span>
                         </li>
-                        <li class="s-list">
+                        <li class="s-list s-left-info">
                             <i class="s-icon icon-2"></i>
                             <span class="s-nav-name">
                                 我的信息
                             </span>
                         </li>
-                        <li class="s-list">
+                        <li class="s-list s-left-avatar">
                             <i class="s-icon icon-3"></i>
                             <span class="s-nav-name">
                                 我的头像
                             </span>
                         </li>
-                        <li class="s-list">
+                        <li class="s-list s-left-coin">
                             <i class="s-icon icon-4"></i>
                             <span class="s-nav-name">
                                 我的硬币
@@ -153,7 +153,7 @@
                     </ul>
                 </div>
                 <div class="s-right">
-                    <div class="s-right-home" style="display: none">
+                    <div class="s-right-home right-on">
                         <div>
                             <div class="index-info">
                                 <div class="home-head">
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="s-right-vip" style="display: none">
+                    <div class="s-right-vip">
                         <div class="s-right-title">
                             <span class="s-right-title-icon"></span>
                             <span class="s-right-title-text">大会员</span>
@@ -226,7 +226,7 @@
                                         <label class="el-form-item__label">我的签名</label>
                                         <div class="el-form-item__content">
                                             <div class="el-textarea">
-                                                <textarea placeholder="设置您的签名- ( ゜- ゜)つロ" type="textarea" rows="2" autocomplete="off" validateevent="true" class="el-textarea__inner"></textarea>
+                                                <textarea placeholder="设置您的签名- ( ゜- ゜)つロ" type="textarea" rows="2" maxlength="70" autocomplete="off" validateevent="true" class="el-textarea__inner"></textarea>
                                             </div>
                                             <button type="button" class="el-button el-button--primary" style="top: 130px;margin-left: 24px"><span>修改签名</span></button>
                                         </div>
@@ -235,12 +235,12 @@
                                         <label class="el-form-item__label">性别</label>
                                         <div class="el-form-item__content">
                                             <div class="el-radio-group">
-                                                <label class="el-radio-button is-active">
-                                                    <input type="radio" class="el-radio-button__orig-radio" value="男">
+                                                <label class="el-radio-button man is-active">
+                                                    <input type="radio" class="el-radio-button__orig-radio">
                                                     <span class="el-radio-button__inner">男</span>
                                                 </label>
-                                                <label class="el-radio-button">
-                                                    <input type="radio" class="el-radio-button__orig-radio" value="女">
+                                                <label class="el-radio-button woman">
+                                                    <input type="radio" class="el-radio-button__orig-radio">
                                                     <span class="el-radio-button__inner">女</span>
                                                 </label>
                                             </div>
@@ -250,9 +250,164 @@
                             </div>
                         </div>
                     </div>
+                    <div class="s-right-avatar">
+                        <div class="s-right-title">
+                            <span class="s-right-title-icon"></span>
+                            <span class="s-right-title-text">我的头像</span>
+                        </div>
+                        <div class="s-right-bottom">
+                            <div class="face-tool">
+                                <div class="tool-container">
+                                    <div class="face-g-preview">
+                                        <a class="face-g-action">
+                                            <p class="line-1">更换</p>
+                                            <p class="line-2">头像</p>
+                                        </a>
+                                        <img src="../img/test.png" class="face-g-avatar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-right-upload">
+                        <div class="upload-box">
+                            <div class="cropper-modal">
+                                <div class="modal">
+                                    <div class="modal-head">
+                                        <div class="head-wrap">
+                                            <a href="" class="upload-to-avatar">我的头像</a>
+                                            > 更换头像
+                                        </div>
+                                    </div>
+                                    <div class="modal-content">
+                                        <div class="img-clip-wrap">
+                                            <div class="container-bg">
+                                                <div class="img-container">
+                                                    <img src="">
+                                                </div>
+                                            </div>
+                                            <label class="first-change-lb" for="file_input">
+                                                <i></i>
+                                                <span>选择图片</span>
+                                            </label>
+                                            <div class="reset-img" style="display: none">
+                                                <label>
+                                                    <i></i>
+                                                    &nbsp;重新选择
+                                                </label>
+                                            </div>
+                                            <input type="file" id="file_input" style="display:none;" accept="image/jpeg,image/png,image/jpg">
+                                        </div>
+                                        <div class="border-line"></div>
+                                        <div class="img-preview-wrap">
+                                            <div class="pre-container" style="background-image: url(../img/test.png)"></div>
+                                            <div class="pre-info">当前头像</div>
+                                        </div>
+                                        <div class="img-new-wrap" style="display: none">
+                                            <div class="new-container"></div>
+                                            <div class="new-info">头像预览</div>
+                                        </div>
+                                    </div>
+                                    <p class="descript">
+                                        请选择图片上传新头像，仅支持JPG和PNG格式
+                                    </p>
+                                    <div class="modal-footer">
+                                        <input type="button" value="更新" class="modal-btn btn-confirm disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-right-coin">
+                        <div>
+                            <div id="bb-info" class="bb-intro-top">
+                                <a class="b-icon-title">P币账户</a>
+                            </div>
+                            <div class="b-info">
+                                <p class="info-tip">账户余额</p>
+                                <h3 class="balance-price">20</h3>
+                                <span class="balance-name">P币</span>
+                            </div>
+                            <div id="bb-trade" class="bb-intro-top">
+                                <a class="b-icon-title">P币充值</a>
+                            </div>
+                            <div class="trade-list">
+                                <p class="num-tip">充值数量</p>
+                                <div class="trade-list-wrapper">
+                                    <div class="trade-wrapper">
+                                        <div>
+                                            <span class="cost">6</span>
+                                            <span class="bb-name">P币</span>
+                                            <div>￥6.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="trade-wrapper">
+                                        <div>
+                                            <span class="cost">18</span>
+                                            <span class="bb-name">P币</span>
+                                            <div>￥18.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="trade-wrapper is-selected">
+                                        <div>
+                                            <span class="cost">68</span>
+                                            <span class="bb-name">P币</span>
+                                            <div>￥68.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="trade-wrapper">
+                                        <div>
+                                            <span class="cost">233</span>
+                                            <span class="bb-name">P币</span>
+                                            <div>￥233.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="trade-wrapper">
+                                        <div>
+                                            <span class="cost">648</span>
+                                            <span class="bb-name">P币</span>
+                                            <div>￥648.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="trade-wrapper">
+                                        <div>
+                                            <span class="cost">998</span>
+                                            <span class="bb-name">P币</span>
+                                            <div>￥998.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="trade-wrapper trade-customn">
+                                        <div class="tips">自定义P币数量</div>
+                                        <div class="enter-wrapper" style="display: none">
+                                            <input id="trade-input" type="text" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');if(this.value=='')$('.trade-customn .enter-tip').html('');else{$('.trade-customn .enter-tip').html('￥' + this.value + '.00');$('.qrpay-content .price p').html(this.value + '.00')}">
+                                            <div class="enter-tip"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="qrpay-group">
+                                    <div class="qr-icon-group">
+                                        <div class="qrcode-icon">
+                                            <img alt="Scan me!" crossorigin="anonymous" src="data:image/png;base64,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">
+                                        </div>
+                                    </div>
+                                    <div class="qrpay-content">
+                                        <div class="price">
+                                            <span class="price-type">￥</span>
+                                            <p style="display: inline-block">68.00</p>
+                                        </div>
+                                        <div class="more-pay">
+                                            <div class="more-btn">购买P币</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/account.js"></script>
 </html>

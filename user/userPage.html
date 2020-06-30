@@ -245,14 +245,14 @@
                 <div class="n-cursor" style="width: 82px;left: 20px"></div>
             </div>
         </div-->
-        <div class="s-space" style="display: none">
+        <div class="s-space" style="display: block">
             <div>
                 <div class="wrapper clearfix page-index">
                     <div class="col-1">
                         <div class="section video">
                             <h3 class="section-title">
                                 <a href="" class="t">我的视频</a>
-                                <div class="be-tab">
+                                <!--div class="be-tab">
                                     <ul class="be-tab-inner clearfix">
                                         <li class="be-tab-item is-active">
                                             <input type="radio" name="be-tab-10" class="be-tab-input" value="pubdate">
@@ -268,7 +268,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="be-tab-cursor" style="left: 134px"><!--相邻按钮之间光标left变化：63px--></div>
+                                <div class="be-tab-cursor" style="left: 134px"><!--相邻按钮之间光标left变化：63px--><!--/div-->
                                 <a href="" class="more">更多<b>></b></a>
                             </h3>
                             <div class="content clearfix">
@@ -443,6 +443,33 @@
                             </div>
                         </div>
                     </div>
+                    <ul class="be-pager">
+                        <li class="be-pager-prev be-pager-disabled">
+                            <a>上一页</a>
+                        </li>
+                        <li class="be-pager-item be-pager-item-active">
+                            <a>1</a>
+                        </li>
+                        <li class="be-pager-item">
+                            <a>2</a>
+                        </li>
+                        <li class="be-pager-item">
+                            <a>3</a>
+                        </li>
+                        <li class="be-pager-item-jump-next">
+
+                        </li>
+                        <li class="be-pager-item">
+                            <a>9</a>
+                        </li>
+                        <li class="be-pager-next">
+                            <a>下一页</a>
+                        </li>
+                        <span class="be-pager-total">共 9 页，</span>
+                        <span class="be-pager-options-elevator">
+                                    跳至 <input type="text" class="space_input"> 页
+                                </span>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -469,13 +496,13 @@
                                         <span>最多收藏</span>
                                     </li>
                                 </ul>
-                                <div class="be-tab-cursor" style="left:39px"><!--相邻两个选项left变化76px--></div>
+                                <div class="be-tab-cursor" style="left:-1px"><!--相邻两个选项left变化76px--></div>
                             </div>
                         </div>
                     </div>
                     <div class="submit-video-type-filter">
                         <a class="active">全部<span class="count">14</span> </a>
-                        <a>生活<span class="count">14</span> </a>
+                        <a>综合区<span class="count">14</span> </a>
                     </div>
                     <div class="section">
                         <div data-pid="" class="small-item">
@@ -647,10 +674,37 @@
                             </div>
                         </div>
                     </div>
+                    <ul class="be-pager">
+                        <li class="be-pager-prev be-pager-disabled">
+                            <a>上一页</a>
+                        </li>
+                        <li class="be-pager-item be-pager-item-active">
+                            <a>1</a>
+                        </li>
+                        <li class="be-pager-item">
+                            <a>2</a>
+                        </li>
+                        <li class="be-pager-item">
+                            <a>3</a>
+                        </li>
+                        <li class="be-pager-item-jump-next">
+
+                        </li>
+                        <li class="be-pager-item">
+                            <a>9</a>
+                        </li>
+                        <li class="be-pager-next">
+                            <a>下一页</a>
+                        </li>
+                        <span class="be-pager-total">共 9 页，</span>
+                        <span class="be-pager-options-elevator">
+                                    跳至 <input type="text" class="space_input"> 页
+                                </span>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div id="page-follow" class="wrapper clearfix">
+        <div id="page-follow" class="wrapper clearfix" style="display: none">
             <div class="clearfix col-follow">
                 <div class="follow-sidenav">
                     <div class="follow-list-container ps">
@@ -721,6 +775,33 @@
                                     </div>
                                 </li>
                             </ul>
+                            <ul class="be-pager">
+                                <li class="be-pager-prev be-pager-disabled">
+                                    <a>上一页</a>
+                                </li>
+                                <li class="be-pager-item be-pager-item-active">
+                                    <a>1</a>
+                                </li>
+                                <li class="be-pager-item">
+                                    <a>2</a>
+                                </li>
+                                <li class="be-pager-item">
+                                    <a>3</a>
+                                </li>
+                                <li class="be-pager-item-jump-next">
+
+                                </li>
+                                <li class="be-pager-item">
+                                    <a>9</a>
+                                </li>
+                                <li class="be-pager-next">
+                                    <a>下一页</a>
+                                </li>
+                                <span class="be-pager-total">共 9 页，</span>
+                                <span class="be-pager-options-elevator">
+                                    跳至 <input type="text" class="space_input"> 页
+                                </span>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -732,7 +813,7 @@
                     </div>
                     <div class="follow-content section">
                         <div class="search-empty-hint">
-                            <p>你还没有关注用户哦~</p>
+                            <p>还没有用户关注你哦~</p>
                         </div>
                         <div class="content">
                             <ul class="relation-list">
@@ -758,6 +839,33 @@
                                         <p class="auth-description">没有签名</p>
                                     </div>
                                 </li>
+                            </ul>
+                            <ul class="be-pager">
+                                <li class="be-pager-prev be-pager-disabled">
+                                    <a>上一页</a>
+                                </li>
+                                <li class="be-pager-item be-pager-item-active">
+                                    <a>1</a>
+                                </li>
+                                <li class="be-pager-item">
+                                    <a>2</a>
+                                </li>
+                                <li class="be-pager-item">
+                                    <a>3</a>
+                                </li>
+                                <li class="be-pager-item-jump-next">
+
+                                </li>
+                                <li class="be-pager-item">
+                                    <a>9</a>
+                                </li>
+                                <li class="be-pager-next">
+                                    <a>下一页</a>
+                                </li>
+                                <span class="be-pager-total">共 9 页，</span>
+                                <span class="be-pager-options-elevator">
+                                    跳至 <input type="text" class="space_input"> 页
+                                </span>
                             </ul>
                         </div>
                     </div>

@@ -459,7 +459,7 @@ ol, ul {
     vertical-align: middle;
     left: 28px;
     position: absolute;
-    bottom: 65px;
+    bottom: 55px;
 }
 
 .n .n-btn {
@@ -506,7 +506,7 @@ ol, ul {
 .n .n-statistics {
     float: right;
     height: 66px;
-    margin-top: -20px;
+    margin-top: -5px;
 }
 
 .n .n-data {
@@ -1183,4 +1183,148 @@ input, textarea {
 .h-basic .icon {
     display: inline-block;
     background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/asserts/icons.png);
+}
+
+.be-pager {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.be-pager-next, .be-pager-prev {
+    padding: 0 14px;
+    border: 1px solid #d7dde4;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.be-pager-item-jump-next, .be-pager-item-jump-prev, .be-pager-next, .be-pager-prev {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 38px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+    font-family: Arial;
+    transition: all .2s ease-in-out;
+}
+
+.be-pager-prev {
+    margin-right: 8px;
+}
+
+.be-pager-disabled {
+    display: none;
+}
+
+.be-pager-next a, .be-pager-prev a {
+    color: #666;
+    font-size: 14px;
+}
+
+.be-pager-item {
+    display: inline-block;
+    line-height: 38px;
+    padding: 0 15px;
+    margin-right: 4px;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 14px;
+    border: 1px solid #d7dde4;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.be-pager-item-active {
+    background-color: #00a1d6;
+    border-color: #00a1d6;
+}
+
+.be-pager-item-jump-next, .be-pager-item-jump-prev, .be-pager-next, .be-pager-prev {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 38px;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+    font-family: Arial;
+    transition: all .2s ease-in-out;
+}
+
+.be-pager-item-jump-next, .be-pager-item-jump-prev {
+    margin-right: 4px;
+}
+
+.be-pager-item-jump-next, .be-pager-item-jump-prev {
+    padding: 0 5px;
+}
+
+.be-pager-item-jump-next:after, .be-pager-item-jump-prev:after {
+    content: "\2022\2022\2022";
+    display: block;
+    letter-spacing: 1px;
+    color: #ccc;
+    text-align: center;
+}
+
+.be-pager-total {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 30px;
+    color: #99a2aa;
+}
+
+.be-pager-options-elevator {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    color: #99a2aa;
+}
+
+.be-pager-options-elevator input {
+    border-radius: 4px;
+    margin: 0 8px;
+    width: 50px;
+}
+
+.space_input {
+    line-height: 28px;
+    height: 28px;
+    padding: 0 10px;
+    transition: all .3s ease;
+    vertical-align: top;
+    border: 1px solid #ccd0d7;
+    border-radius: 0;
+}
+
+.be-pager-item a {
+    text-decoration: none;
+    color: #657180;
+}
+
+.be-pager-item-active:hover a, .be-pager-item-active a {
+    color: #fff;
+}
+
+.be-pager-item:hover {
+    border-color: #00a1d6;
+}
+
+.be-pager-next:hover, .be-pager-prev:hover {
+    border-color: #00a1d6;
+}
+
+.be-pager-next:hover a, .be-pager-prev:hover a {
+    color: #00a1d6;
+}
+
+.be-pager-item:hover a {
+    color: #00a1d6;
 }

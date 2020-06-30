@@ -84,7 +84,7 @@ header .nav-search {
     position: relative;
 }
 
-.bili-header-m .nav-search .nav-search-keyword, .international-header .nav-search .nav-search-keyword {
+.pili-header-m .nav-search .nav-search-keyword, .international-header .nav-search .nav-search-keyword {
     overflow: hidden;
     width: 500px;
     height: 34px;

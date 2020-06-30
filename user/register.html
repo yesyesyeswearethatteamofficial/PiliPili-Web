@@ -4,25 +4,56 @@
     <meta charset="UTF-8">
     <title>注册PiliPili账号</title>
     <link rel="stylesheet" href="../css/register.css">
+
 </head>
 <body>
-    <input id="email" placeholder="邮箱" type="text"><div id="emailFault" class="fault">邮箱不正确</div><br>
-    <input id="username" placeholder="昵称" type="text"><br>
-    <input id="password" placeholder="密码（6-20个字符组成，区分大小写）" type="password"><br>
-    <button type="button" id="btn_reg">注册</button>
+    <div class="app">
+        <div>
+            <div class="top-banner">
+                <img src="//s1.hdslb.com/bfs/static/passport/static/img/rl_top.35edfde.png">
+            </div>
+            <div class="title-line">
+                <span class="tit">注册</span>
+            </div>
+            <div class="register-container">
+                <div>
+                    <div class="register-group">
+                        <div class="el-input">
+                            <input id="email" class="el-input__inner" placeholder="邮箱">
+                        </div>
+                        <p id="email-error" class="error-message"></p>
+                    </div>
+                    <br><br>
+                    <div class="register-group">
+                        <div class="el-input">
+                            <input id="uname" class="el-input__inner" placeholder="昵称（2-15位）">
+                        </div>
+                        <p id="uname-error" class="error-message"></p>
+                    </div>
+                    <br><br>
+                    <div class="register-group">
+                        <div class="el-input">
+                            <input id="pw" class="el-input__inner" placeholder="密码（6-20个字符组成，区分大小写）">
+                        </div>
+                        <p id="pw-error" class="error-message"></p>
+                    </div>
+                    <br><br><br>
+                    <div class="register-group">
+                        <button type="button" class="el-button btn-full el-button--primary">
+                            <span>注册</span>
+                        </button>
+                    </div>
+                    <div class="register-group message">
+                        <span id="register-error" class="error-message"></span>
+                        <span class="register-success"></span>
+                        <a id="to-login" href="login.html"></a>
+                        <a id="error-reload" href="" class="error-message"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="../js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#btn_reg").click(function(){
-            var submit =true;
-            var emailRegex =/^\w+@+[0-9a-zA-Z]+\.(com|com.cn|edu|hk|cn|net)$/;
-            if(!emailRegex.test($("#email").val()) || $("#email").val().length < 6 || $("#email").val().length > 25){
-                $("#emailFault").css("display","inline");
-                console.log($("#email").val());
-            }
-
-        });
-    })
-</script>
+<script src="../js/register.js"></script>
 </html>
