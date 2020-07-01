@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="referrer" content="no-referrer">
     <link rel="stylesheet" href="../css/userStyleSheet.css">
     <link rel="stylesheet" href="../css/miniHeader.css">
-    <title>nightayk的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili</title><meta name="keywords" content="nightayk,B站,弹幕,字幕,AMV,MAD,MTV,ANIME,动漫,动漫音乐,游戏,游戏解说,ACG,galgame,动画,番组,新番,初音,洛天依,vocaloid"/>
-    <meta name="description" content="nightayk，，bilibili是国内知名的视频弹幕网站，这里有最及时的动漫新番，最棒的ACG氛围，最有创意的Up主。大家可以在这里找到许多欢乐。"/>
+    <title></title>
 </head>
 <body>
     <div id="internationalHeader" class="international-header">
@@ -46,21 +46,21 @@
                 </div>
                 <div class="nav-user-center">
                     <div class="user-con">
-                        <div class="item">
+                        <div class="item toSpace-item">
                             <span>
-                                <div class="mini-avatar">
-                                    <img src="../img/test.png" alt class>
+                                <div class="mini-avatar mini-user-avatar">
+                                    <img alt class>
                                 </div>
                             </span>
                         </div>
                         <div class="item">
                             <div class="nav-item">
-                                <a href="" target="_blank"><span class="name">个人中心</span> </a>
+                                <a href="account.html" target="_blank"><span class="name">个人中心</span> </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="nav-item">
-                                <a href="" target="_blank"><span class="name">大会员</span></a>
+                                <a href="" class="toVip"><span class="name">大会员</span></a>
                             </div>
                         </div>
                         <!--div class="item">
@@ -75,7 +75,7 @@
                         </div-->
                         <div class="item">
                             <div class="nav-item">
-                                <a href="" target="_blank"><span class="name">收藏</span> </a>
+                                <a href="userPage.html" target="_blank"><span class="name">收藏</span> </a>
                             </div>
                         </div>
                         <!--div class="item">
@@ -108,24 +108,24 @@
                     </div>
                 </div>
                 <div class="h-inner" >
-                    <img src="../img/test.png" class="cover">
+                    <img class="cover">
                     <div class="h-user">
                         <div class="h-info clearfix">
                             <div class="h-avatar">
-                                <img src="../img/test.png" class="h-avatar-img">
+                                <img class="h-avatar-img">
                                 <a target="_blank" href="" class="avatar-cover">更换头像</a>
                                 <span class="avatar-m"></span>
                             </div>
                             <div class="h-basic">
                                 <div>
-                                    <span class="h-name">nightayk</span>
+                                    <span class="h-name"></span>
                                     <!--span class="h-ceritification icon"></span-->
-                                    <span id="h-gender" class="icon gender male"></span>
-                                    <a href="" target="" class="h-vipType">大会员</a>
+                                    <span id="h-gender" class="icon gender"></span>
+                                    <a href="" target="" class="h-vipType toVip">大会员</a>
                                 </div>
                                 <div class="h-basic-spacing">
                                     <h4 title class="h-sign" style="display: none"></h4>
-                                    <input type="text" placeholder="编辑个性签名" maxlength="60" class="h-sign-2 space_input">
+                                    <input spellcheck="false" type="text" placeholder="编辑个性签名" maxlength="60" class="h-sign-2 space_input" onblur="uploadSign()">
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
             <div class="wrapper">
                 <div class="n-inner clearfix">
                     <div class="n-tab-links">
-                        <a href="" class="n-btn ">
+                        <a href="" id="n-main" class="n-btn ">
                             <span >
                                 <img src="../img/ic_home.webp" class="icon">
                             </span>
@@ -192,7 +192,7 @@
                             </span>
                             <span class="n-text">动态</span>
                         </a-->
-                        <a href="" class="n-btn">
+                        <a href="" id="n-con" class="n-btn">
                             <span class="icon">
                                 <img src="../img/ic_con.png" class="icon">
                             </span>
@@ -204,7 +204,7 @@
                             </span>
                             <span class="n-text">频道</span>
                         </a-->
-                        <a href="" class="n-btn">
+                        <a href="" id="n-fav" class="n-btn">
                             <span class="icon">
                                 <img src="../img/ic_fav.png" class="icon">
                             </span>
@@ -212,21 +212,17 @@
                         </a>
                     </div>
                     <div class="n-statistics">
-                        <a href="" class="n-data" title="8">
+                        <a href="" class="n-follow n-data">
                             <p class="n-data-k">关注数</p>
-                            <p id="n-gz" class="n-data-v">8</p>
+                            <p id="n-gz" class="n-data-v"></p>
                         </a>
-                        <a href="" class="n-data" title="0">
+                        <a href="" class="n-fan n-data">
                             <p class="n-data-k">粉丝数</p>
-                            <p id="n-fs" class="n-data-v">0</p>
+                            <p id="n-fs" class="n-data-v"></p>
                         </a>
-                        <div title="截止昨天，播放数总计为103" class="n-data">
-                            <p class="n-data-k">播放数</p>
-                            <p id="n-bf" class="n-data-v">103</p>
-                        </div>
                     </div>
                 </div>
-                <div class="n-cursor" style="left: 26px"><!--相邻按钮之间切换光标位置变化：70px--></div>
+                <div class="n-cursor" style="left: 25px"><!--相邻按钮之间切换光标位置变化：70px--></div>
             </div>
         </div>
         <!--div id="navigator-fixed" class="n n-fix">
@@ -245,13 +241,13 @@
                 <div class="n-cursor" style="width: 82px;left: 20px"></div>
             </div>
         </div-->
-        <div class="s-space" style="display: block">
+        <div class="s-space">
             <div>
                 <div class="wrapper clearfix page-index">
                     <div class="col-1">
                         <div class="section video">
                             <h3 class="section-title">
-                                <a href="" class="t">我的视频</a>
+                                <a href="" class="t t-con">我的视频</a>
                                 <!--div class="be-tab">
                                     <ul class="be-tab-inner clearfix">
                                         <li class="be-tab-item is-active">
@@ -269,7 +265,7 @@
                                     </ul>
                                 </div>
                                 <div class="be-tab-cursor" style="left: 134px"><!--相邻按钮之间光标left变化：63px--><!--/div-->
-                                <a href="" class="more">更多<b>></b></a>
+                                <a href="" class="more more-con">更多<b>></b></a>
                             </h3>
                             <div class="content clearfix">
                                 <div data-pid="" class="small-item">
@@ -290,12 +286,12 @@
                         </div>
                         <div class="section fav">
                             <h3 class="section-title">
-                                <a href="" class="t">我的收藏夹</a>
-                                <a href="" class="more">更多<b>></b></a>
+                                <a href="" class="t t-fav">我的收藏夹</a>
+                                <a href="" class="more more-fav">更多<b>></b></a>
                             </h3>
                             <div class="content clearfix">
                                 <div data-pid="" class="small-item">
-                                    <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+                                    <a href="" target="_blank" class="cover"><img alt="test-video"><span class="length">147:52</span> </a>
                                     <a href="" target="_blank" title="test-video" class="title">test-video</a>
                                     <div class="meta">
                                         <span class="play">
@@ -314,11 +310,14 @@
                 </div>
             </div>
         </div>
-        <div id="page-fav" class="wrapper" style="display: none">
+        <div id="page-fav" class="s-fav wrapper">
             <div class="col-full clearfix">
                 <div class="fav-main section">
                     <div class="fav-header">
                         <div class="fav-info clearfix">
+                            <div class="breadcrumb">
+                                <p class="item cur">我的收藏</p>
+                            </div>
                             <div class="fav-filters clearfix">
                                 <div id="do-batch" class="filter-item">
                                     <span class="text">批量操作</span>
@@ -358,90 +357,6 @@
                                         </span>
                             </div>
                         </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
                     </div>
                     <ul class="be-pager">
                         <li class="be-pager-prev be-pager-disabled">
@@ -473,7 +388,7 @@
                 </div>
             </div>
         </div>
-        <div id="page-vedio" class="wrapper" style="display: none">
+        <div id="page-vedio" class="s-video wrapper">
             <div class="col-full clearfix">
                 <div class="main-content">
                     <div class="page-head clearfix">
@@ -505,172 +420,18 @@
                         <a>综合区<span class="count">14</span> </a>
                     </div>
                     <div class="section">
-                        <div data-pid="" class="small-item">
+                        <div class="small-item">
                             <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
                             <a href="" target="_blank" title="test-video" class="title">test-video</a>
                             <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
+                                <span class="play">
+                                    <img src="../img/ic_play.png">
+                                    19
+                                </span>
                                 <span class="time">
-
+                                    <img src="../img/ic_time.png">
                                             2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
-                            </div>
-                        </div>
-                        <div data-pid="" class="small-item">
-                            <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
-                            <a href="" target="_blank" title="test-video" class="title">test-video</a>
-                            <div class="meta">
-                                        <span class="play">
-
-                                            19
-                                        </span>
-                                <span class="time">
-
-                                            2020-6-23
-                                        </span>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -704,28 +465,28 @@
                 </div>
             </div>
         </div>
-        <div id="page-follow" class="wrapper clearfix" style="display: none">
+        <div id="page-follow" class="s-follow wrapper clearfix">
             <div class="clearfix col-follow">
                 <div class="follow-sidenav">
                     <div class="follow-list-container ps">
-                        <ul class="follow-list">
-                            <li class="follow-item cur">
+                        <ul id="space-follow-side" class="follow-list">
+                            <li id="follow-side" class="follow-item">
                                 <span class="icon icon-follow">
                                     <img src="../img/ic_follow.png" class="icon icon-follow">
                                 </span>
-                                <a href="" class="text router-link-active">
+                                <a href="" class="text">
                                     我的关注
                                 </a>
-                                <span class="num router-link-active">8</span>
+                                <span class="num"></span>
                             </li>
-                            <li class="follow-item">
+                            <li id="fan-side" class="follow-item">
                                 <span class="icon icon-follow">
                                     <img src="../img/ic_fans.png" class="icon icon-follow">
                                 </span>
                                 <a href="" class="text">
                                     我的粉丝
                                 </a>
-                                <span class="num">0</span>
+                                <span class="num"></span>
                             </li>
                         </ul>
                     </div>
@@ -805,7 +566,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="fans" class="follow-main">
+                <div id="fans" class="follow-main" style="display: none">
                     <div class="follow-header follow-header-info">
                         <div class="breadcrumb clearfix">
                             <p class="item cur">我的粉丝</p>
@@ -874,4 +635,8 @@
         </div>
     </div>
 </body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/aliyun-oss-sdk-4.4.4.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/space.js"></script>
 </html>

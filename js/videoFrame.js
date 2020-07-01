@@ -1,4 +1,7 @@
 window.onload=function () {
+    $(".mini-avatar img").attr("src",sessionStorage.getItem("avatar"));
+
+
     $("#video_input").on("change", function (e) {
         var file = e.target.files[0];   // 获取视频资源
         var fileTypes = ["mp4", "mpeg"];

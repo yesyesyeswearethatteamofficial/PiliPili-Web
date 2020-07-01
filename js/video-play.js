@@ -1,4 +1,6 @@
 window.onload=function() {
+    $(".toSpace-item .mini-avatar").attr("src",sessionStorage.getItem("avatar"));
+    $(".user-head").attr("src",sessionStorage.getItem("avatar"));
 
     $("#danmup").DanmuPlayer({src: "../testv.mp4", width: 657, height: 464});
     $(".ctrl-progress").css("height", "3px");

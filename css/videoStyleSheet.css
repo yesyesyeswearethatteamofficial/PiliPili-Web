@@ -708,7 +708,7 @@ input[type=checkbox], input[type=radio] {
     padding: 0;
 }
 
-bb-comment .comment-list .list-item .text, .comment-pilipili-fold .comment-list .list-item .text {
+.bb-comment .comment-list .list-item .text, .comment-pilipili-fold .comment-list .list-item .text {
     line-height: 20px;
     padding: 2px 0;
     font-size: 14px;
@@ -939,5 +939,70 @@ bb-comment .comment-list .list-item .text, .comment-pilipili-fold .comment-list 
 
 .stowed{
 
+}
+
+.bb-comment .comment-send, .comment-pilipili-fold .comment-send {
+    margin: 10px 0;
+}
+
+.bb-comment *, .comment-pilipili-fold * {
+    box-sizing: content-box;
+}
+
+.bb-comment .comment-list .list-item .comment-send .user-face, .comment-pilipili-fold .comment-list .list-item .comment-send .user-face {
+    margin: 7px 0 0 5px;
+    float: left;
+    position: relative;
+}
+
+.bb-comment .comment-list .list-item .user-face img, .comment-pilipili-fold .comment-list .list-item .user-face img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.bb-comment .comment-send .textarea-container, .comment-pilipili-fold .comment-send .textarea-container {
+    position: relative;
+    margin-left: 85px;
+    margin-right: 80px;
+}
+
+.bb-comment .comment-send .textarea-container textarea, .comment-pilipili-fold .comment-send .textarea-container textarea {
+    font-size: 12px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #f4f5f7;
+    border: 1px solid #e5e9ef;
+    overflow: auto;
+    border-radius: 4px;
+    color: #555;
+    width: 100%!important;
+    height: 65px;
+    transition: 0s;
+    padding: 5px 10px;
+    line-height: normal;
+    outline: none;
+    resize: none;
+}
+
+.bb-comment .comment-send .comment-submit, .comment-pilipili-fold .comment-send .comment-submit {
+    width: 70px;
+    height: 64px;
+    position: absolute;
+    right: -80px;
+    top: 0;
+    padding: 4px 15px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 60px;
+    vertical-align: top;
+    cursor: pointer;
+    background-color: #00a1d6;
+    border: 1px solid #00a1d6;
+    transition: .1s;
+    user-select: none;
+    outline: none;
 }
 

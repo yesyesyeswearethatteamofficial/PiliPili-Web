@@ -85,7 +85,7 @@ a {
     width: 980px;
     height: 106px;
     margin: 0 auto;
-    background: url(https://s1.hdslb.com/bfs/static/account-fe/static/img/rl_top.35edfde.png) no-repeat;
+    background: url("../img/img-top.png") no-repeat;
 }
 
 .s-content {
@@ -303,7 +303,6 @@ a {
     display: inline-block;
     vertical-align: top;
     position: relative;
-    cursor: pointer;
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -1214,4 +1213,138 @@ a {
     width: 148px;
     height: 148px;
     position: relative;
+}
+
+.icon-5 {
+    background-position: -23px -272px;
+}
+
+.pw-input-group {
+    line-height: normal;
+    display: inline-table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.pw-input {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    border-right: 0;
+}
+
+.pw-input-group__prepend {
+    width: 360px;
+    text-align: center;
+}
+
+.pw-input-group--append .pw-input__inner, .pw-input-group__prepend {
+    -moz-border-radius-topright: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+}
+
+.pw-input-group__append, .pw-input-group__prepend {
+    background-color: #f5f7fa;
+    color: #909399;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.pw-input__inner {
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    -o-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    -moz-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+}
+
+.pw-input-group>.pw-input__inner {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.form-group {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.form-message {
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #e40c0c;
+}
+
+.pw-button--primary {
+    color: #fff;
+    background-color: #00a1d6;
+    border-color: #00a1d6;
+}
+
+.pw-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
+    -moz-transition: .1s;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.pw-container {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.s-right-pw{
+    display: none;
+}
+
+.s-right-pw.right-on{
+    display: block;
 }

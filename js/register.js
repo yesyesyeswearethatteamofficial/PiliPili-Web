@@ -25,11 +25,11 @@ window.onload=function () {
           $("#pw-error").html("密码不能为空");
       }
       else{
-          if($("#pw").val().length < 2){
+          if($("#pw").val().length < 6){
               submit = false;
               $("#pw-error").html("密码过短");
           }
-          else if($("#pw").val().length > 15){
+          else if($("#pw").val().length > 20){
               submit = false;
               $("#pw-error").html("密码过长");
           }
@@ -53,23 +53,19 @@ window.onload=function () {
           $(".register-group button").css("display","none");
           $.ajax({
               type:"POST",
-              url:"http://47.93.139.52/user/register",
-              contentType: "application/json;charset=utf-8",
+              url:"http://47.93.139.52:8000/user/register",
+              contentType: false,
               dataType: "json",
-              data:{"email":$("#email").val(),"username":$("#uname").val(),"password":$("#pw").val()},
+              data:JSON.stringify({"email":$("#email").val(),"username":$("#uname").val(),"password":$("#pw").val()}),
               success:function (data) {
-                  var jsonData = JSON.parse(data);
-                  if(jsonData.code == 200){
-                      $(".register-success").html("注册成功：");
-                      $("#to-login").html("点我返回登录界面");
-                  }
-                  else{
-                      $("#register-error").html("因不可抗力注册失败，");
-                      $("#error-reload").html("请点击重试");
-                  }
+                  var json = getJson(data);
+
+                  $(".register-success").html("注册成功：");
+                  $("#to-login").html("点我返回登录界面");
               },
               error:function (data) {
-                  $("#register-error").html("因不可抗力注册失败，");
+                  var json = getErrJson(data);
+                  $("#register-error").html(json[0].message+",");
                   $("#error-reload").html("请点击重试");
               }
           });

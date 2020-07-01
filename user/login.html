@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>登录PiliPili</title>
+    <link rel="stylesheet" href="../css/loginStyleSheet.css">
 </head>
 <body>
-
+    <div class="app">
+        <div>
+            <div class="top-banner">
+                <img src="../img/img-top.png">
+            </div>
+            <div class="title-line">
+                <span class="tit">登录</span>
+            </div>
+            <div class="login-box">
+                <div class="login-right">
+                    <div class="form-login">
+                        <div class="input-box">
+                            <div>
+                                <div>
+                                    <div class="item status-box">
+                                        <input type="text" spellcheck="false" value="" placeholder="你的邮箱" id="email" maxlength="50" autocomplete="off" class="">
+                                        <div class="text">
+                                            <p id="e-tip" class="tips"></p>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <div class="item status-box">
+                                        <input type="password" placeholder="密码" id="pw" class="">
+                                        <div class="text">
+                                            <p id="p-tip" class="tips"></p>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                </div>
+                                <div class="btn-box">
+                                    <a class="btn btn-login">登录</a>
+                                    <a class="btn btn-reg" href="register.html">注册</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/login.js"></script>
 </html>
