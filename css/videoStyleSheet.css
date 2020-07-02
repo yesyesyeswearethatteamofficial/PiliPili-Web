@@ -499,7 +499,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .video-toolbar .ops>span {
-    width: 92px;
+    width: 62px;
     margin-right: 8px;
     cursor: pointer;
     transition: all .3s;

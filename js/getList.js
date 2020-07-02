@@ -1,6 +1,8 @@
 window.onload=function(){
-    $(".mini-user-avatar img").attr("src",sessionStorage.getItem("avatar"));
-
+    $("#reload").click(function () {
+       location.reload();
+       return false;
+    });
 
     $.ajax({
         type: "GET",
@@ -22,7 +24,7 @@ window.onload=function(){
                             var i_json = getJson(data);
                             if(i_json[0].code == 200){
                                 var i_jjson = getJson(i_json[0].data);
-                                newItem(i_jjson[0]);
+                                $(".section").append(newItem(i_jjson[0]));
                             }
                         },
                         error: function (data) {
@@ -42,4 +44,6 @@ window.onload=function(){
             location.reload();
         }
     });
+
+    $(".mini-user-avatar img").attr("src",sessionStorage.getItem("avatar"));
 }

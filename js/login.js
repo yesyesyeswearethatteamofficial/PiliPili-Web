@@ -34,17 +34,22 @@ window.onload=function () {
                         sessionStorage.setItem("token",jjson[0].token);
                         sessionStorage.setItem("toSpace",".s-space");
                         sessionStorage.setItem("fromLogin","true");
-                        window.location.href="userPage.html";
+                        sessionStorage.setItem("email",$("#email").val());
+                        sessionStorage.setItem("pw",$("#pw").val());
+                        sessionStorage.setItem("fromLogin","true");
+                        window.location.href="userPage.html?token=" + jjson[0].token;
                     }
                     else{
                         $("#p-tip").html(json[0].message);
                         $(".btn-box").css("display","block");
+                        return false;
                     }
                 },
                 error:function (data) {
                     var json = getErrJson(data);
                     $("#p-tip").html(json[0].message);
                     $(".btn-box").css("display","block");
+                    return false;
                 }
             });
         }

@@ -1,12 +1,12 @@
 window.onload=function(){
-    if(sessionStorage.getItem("toVip") == "true"){
+    if(getUrlParam('to') == "vip"){
         $(".s-left .on").removeClass("on router-link-active");
         $(".s-left .s-left-vip").addClass("on router-link-active");
         $(".s-right .right-on").removeClass("right-on");
         $(".s-right .s-right-vip").addClass("right-on");
         sessionStorage.setItem("toVip","false");
     }
-    else if(sessionStorage.getItem("toAvatar") == "true"){
+    else if(getUrlParam('to') == "avatar"){
         $(".s-left .on").removeClass("on router-link-active");
         $(".s-left .s-left-avatar").addClass("on router-link-active");
         $(".s-right .right-on").removeClass("right-on");
@@ -14,6 +14,7 @@ window.onload=function(){
         sessionStorage.setItem("toAvatar","false");
     }
 
+    $("title").text(sessionStorage.getItem("username") + "的个人中心");
     $(".mini-user-avatar img").attr("src",sessionStorage.getItem("avatar"));
     $(".home-head img").attr("src",sessionStorage.getItem("avatar"));
     $(".big-head img").attr("src",sessionStorage.getItem("avatar"));
