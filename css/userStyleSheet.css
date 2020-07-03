@@ -124,7 +124,6 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     position: absolute;
     display: none;
     z-index: 9;
-    background-image: url("../img/test.png");
     background-repeat: no-repeat;
 }
 

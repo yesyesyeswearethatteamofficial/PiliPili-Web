@@ -42,19 +42,16 @@ window.onload=function () {
                     else{
                         $("#p-tip").html(json[0].message);
                         $(".btn-box").css("display","block");
-                        return false;
                     }
                 },
                 error:function (data) {
-                    var json = getErrJson(data);
+                    var json = getJson(data);
                     $("#p-tip").html(json[0].message);
                     $(".btn-box").css("display","block");
-                    return false;
                 }
             });
         }
         else {
-            return false;
         }
     });
 }

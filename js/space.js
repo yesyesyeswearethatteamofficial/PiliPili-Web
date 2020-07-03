@@ -1,6 +1,13 @@
 window.onload=function () {
+
+    if(sessionStorage.getItem("token") == null){
+        window.location.href="../user/login.html";
+        return false;
+    }
+
     if(sessionStorage.getItem("fromLogin") == "true") {
         sessionStorage.setItem("token", getUrlParam('token'));
+        return false;
     }
 
     $.ajax({    //获取用户个人信息
@@ -61,7 +68,6 @@ window.onload=function () {
         error: function (data) {
             alert("获取用户个人信息失败");
             window.history.back();
-            ;
             return false;
         }
     });
@@ -76,9 +82,9 @@ window.onload=function () {
             if (json[0].code == 200) {
                 var jjson = getJson(json[0].data);
                 if (jjson[0].file != null) {
-                    var avatarClient = OSS({
+                    var avatarClient = OSS.Wrapper({
                         accessKeyId: jjson[0].guest_key,
-                        accessKeySecret: jjson[0].guset_secret,
+                        accessKeySecret: jjson[0].guest_secret,
                         bucket: 'pilipili-bucket',
                         region: 'oss-cn-beijing',
                         stsToken: jjson[0].security_token + '',//token
@@ -160,15 +166,22 @@ window.onload=function () {
                 $("#page-vedio .submit-video-type-filter .count").html(i);
 
                 conMostViews();
+                for (item of jjson[0].video_list) {
+                    var i_jjson = getJson(item);
+                    $("#page-vedio .newest").prepend(newItem(i_jjson[0]));
+                    i++;
+                }
             }
             else {
                 alert("获取视频列表信息失败");
                 window.history.back();
+                return false;
             }
         },
         error: function (data) {
             alert("获取视频列表信息失败");
             window.history.back();
+            return false;
         }
     });
 
@@ -180,9 +193,75 @@ window.onload=function () {
     if(parseInt(sessionStorage.getItem("followings")) == 0){
         $("#empty-follow").css("display","block");
     }
+    else{
+        $.ajax({    //获取关注信息
+            type: "GET",
+            url: "http://47.93.139.52:8000/user/uid" + sessionStorage.getItem("uid") + "/list-followings",
+            contentType: "application/json;charset=utf-8",
+            async:false,
+            headers: {
+                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+            },
+            success: function (data) {
+                var json = getJson(data);
+                if (json[0].code == 200) {
+                    var jjson = getJson(json[0].data);
+                    for(item of jjson[0].list){
+                        var ijson = getJson(item);
+                        $("#follow .relation-list").append(newFollowItem(ijson[0]));
+                    }
+                }
+                else {
+                    alert("获取用户关注信息失败");
+                    window.history.back();
+                    return false;
+                }
+
+
+            },
+            error: function (data) {
+                alert("获取用户关注信息失败");
+                window.history.back();
+                return false;
+            }
+        });
+    }
     $("#n-fs").html(sessionStorage.getItem("fans"));
     if(parseInt(sessionStorage.getItem("fans")) == 0){
         $("#empty-fan").css("display","block");
+    }
+    else {
+        $.ajax({    //获取粉丝信息
+            type: "GET",
+            url: "http://47.93.139.52:8000/user/uid" + sessionStorage.getItem("uid") + "/list-followings",
+            contentType: "application/json;charset=utf-8",
+            async:false,
+            headers: {
+                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+            },
+            success: function (data) {
+                var json = getJson(data);
+                if (json[0].code == 200) {
+                    var jjson = getJson(json[0].data);
+                    for(item of jjson[0].list){
+                        var ijson = getJson(item);
+                        $("#fans .relation-list").append(newFanItem(ijson[0]));
+                    }
+                }
+                else {
+                    alert("获取用户粉丝信息失败");
+                    window.history.back();
+                    return false;
+                }
+
+
+            },
+            error: function (data) {
+                alert("获取用户粉丝信息失败");
+                window.history.back();
+                return false;
+            }
+        });
     }
     if (sessionStorage.getItem("gender") == "true") {
         $("#h-gender").addClass("female");
@@ -320,6 +399,44 @@ window.onload=function () {
         $(".main-content .type-on").removeClass("type-on");
         $(".main-content .most").addClass("type-on");
     });
+
+    $(".fans-action-text").click(function () {
+        if(confirm("你确定要取消对ta的关注吗？")){
+            $.ajax({
+                type: "POST",
+                url: "http://47.93.139.52:8000/user/un-fan",
+                contentType: "application/json;charset=utf-8",
+                async:false,
+                headers: {
+                    'Authorization': 'JWT ' + sessionStorage.getItem("token")
+                },
+                data:JSON.stringify({"id":parseInt($(this).attr("follow-id"))}),
+                success: function (data) {
+                    var json = getJson(data);
+                    if (json[0].code == 200) {
+                        window.location.href="userPage.html?to=follow";
+                    }
+                    else {
+                        alert("取消关注失败（网络原因），请重试");
+                        return false;
+                    }
+
+
+                },
+                error: function (data) {
+                    alert("取消关注失败（网络原因），请重试");
+                    return false;
+                }
+            });
+        }
+    });
+
+    if(getUrlParam('to') == "follow"){
+        $(".n-follow").click();
+    }
+    else if(getUrlParam('to') == "fav"){
+        $("#n-fav").click();
+    }
 }
 
 function uploadSign() { //失去焦点时自动保存签名
@@ -351,7 +468,7 @@ function uploadSign() { //失去焦点时自动保存签名
 }
 
 //<div class="small-item">
-//                             <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+//                             <a href="" target="_blank" class="cover"><img src="" alt="test-video"><span class="length">147:52</span> </a>
 //                             <a href="" target="_blank" title="test-video" class="title">test-video</a>
 //                             <div class="meta">
 //                                 <span class="play">

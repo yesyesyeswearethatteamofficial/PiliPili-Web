@@ -1,4 +1,8 @@
 window.onload=function() {
+    if(sessionStorage.getItem("token") == null  ){
+        window.location.href="../user/login.html";
+    }
+
     $(".toSpace-item .mini-avatar img").attr("src",sessionStorage.getItem("avatar"));
     $(".user-head").attr("src",sessionStorage.getItem("avatar"));
     if(getUrlParam('isAuthor') == "false"){
@@ -25,11 +29,13 @@ window.onload=function() {
                 else{
                     alert("获取用户公开信息失败");
                     location.reload();
+                    return false;
                 }
             },
             error: function (data) {
                 alert("获取用户公开信息失败");
                 location.reload();
+                return false;
             }
         });
 
@@ -62,11 +68,13 @@ window.onload=function() {
                 else{
                     alert("获取用户公开信息失败");
                     location.reload();
+                    return false;
                 }
             },
             error: function (data) {
                 alert("获取用户公开信息失败");
                 location.reload();
+                return false;
             }
         });
 
@@ -95,11 +103,13 @@ window.onload=function() {
                 else{
                     alert("获取关注信息失败");
                     location.reload();
+                    return false;
                 }
             },
             error: function (data) {
                 alert("获取关注信息失败");
                 location.reload();
+                return false;
             }
         });
 
@@ -110,6 +120,7 @@ window.onload=function() {
         $(".fa").attr("src",sessionStorage.getItem("avatar"));
         $(".u-info .username").html(sessionStorage.getItem("username"));
         $(".u-info .desc").html(sessionStorage.getItem("sign"));
+        return false;
     }
 
     $.ajax({
@@ -125,6 +136,7 @@ window.onload=function() {
             if (json[0].code == 200) {
                 var jjson = getJson(json[0].data);
                 $(".video-title .tit").html(jjson[0].title);
+                $("title").html(jjson[0].title);
                 $(".video-data .a-date").html(jjson[0].time);
                 $(".video-data .view").html(jjson[0].views + "播放&nbsp;&nbsp;");
                 $(".video-data .dm").html(jjson[0].danmuku + "弹幕");
@@ -164,21 +176,25 @@ window.onload=function() {
                         else{
                             alert("获取视频信息失败");
                             location.reload();
+                            return false;
                         }
                     },
                     error: function (data) {
                         alert("获取视频信息失败");
                         location.reload();
+                        return false;
                     },})
             }
             else{
                 alert("获取视频信息失败");
                 location.reload();
+                return false;
             }
         },
         error: function (data) {
             alert("获取视频信息失败");
             location.reload();
+            return false;
         }
     });
 
@@ -207,11 +223,13 @@ window.onload=function() {
             else{
                 alert("获取视频信息失败");
                 location.reload();
+                return false;
             }
         },
         error: function (data) {
             alert("获取视频信息失败");
             location.reload();
+            return false;
         }
     });
 
@@ -234,14 +252,17 @@ window.onload=function() {
             else{
                 alert("获取弹幕信息失败");
                 location.reload();
+                return false;
             }
         },
         error: function (data) {
             alert("获取弹幕信息失败");
             location.reload();
+            return false;
         }
     });
 
+    $(".u-face a").attr("href","../user/otherSpace.html?aid=" + getUrlParam('aid'));
     $(".ctrl-progress").css("height", "3px");
     $(".progress-handle").css("height", "0");
     $(".progress-handle").css("width", "0");

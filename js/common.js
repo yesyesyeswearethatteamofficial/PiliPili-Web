@@ -34,6 +34,12 @@ function getJson(data) {
     return json;
 }
 
+function getFileName(e){
+    var pos=e.lastIndexOf("\\");
+    return e.substring(pos+1);
+}
+
+
 function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
     var r = window.location.search.substr(1).match(reg);  //匹配目标参数
@@ -100,7 +106,7 @@ function conMostViews() {
 }*/
 
 //<div class="small-item">
-//                             <a href="" target="_blank" class="cover"><img src="../img/test.png" alt="test-video"><span class="length">147:52</span> </a>
+//                             <a href="" target="_blank" class="cover"><img src><span class="length">147:52</span> </a>
 //                             <a href="" target="_blank" title="test-video" class="title">test-video</a>
 //                             <div class="meta">
 //                                 <span class="play">
@@ -113,3 +119,114 @@ function conMostViews() {
 //                                 </span>
 //                             </div>
 //                         </div>
+
+function newFollowItem(e) {
+    var a=[];
+    a.push("<li class='list-item " + e.id + "'><a href='../user/otherSpace.html?uid=" + e.id + "' target='_blank' class='cover'><img src='");
+    $.ajax({    //获取用户头像
+        type: "GET",
+        url: "http://47.93.139.52:8000/user/uid" + e.id + "/get-avatar",
+        contentType: "application/json;charset=utf-8",
+        async:false,
+        success: function (data) {
+            var ajson = getJson(data);
+            if (ajson[0].code == 200) {
+                var ajjson = getJson(ajson[0].data);
+                if (ajjson[0].file != null) {
+                    var avatarClient = OSS.Wrapper({
+                        accessKeyId: ajjson[0].guest_key,
+                        accessKeySecret: ajjson[0].guest_secret,
+                        bucket: 'pilipili-bucket',
+                        region: 'oss-cn-beijing',
+                        stsToken: ajjson[0].security_token + '',//token
+                    });
+                    a.push(avatarClient.signatureUrl(ajjson[0].file) + "' class='cover'>");
+                }
+                else {
+                    a.push( "../img/null_avatar.png' class='cover'>");
+                }
+            }
+            else {
+                alert("获取用户头像失败");
+                window.history.back();
+                return false;
+            }
+        },
+        error: function (data) {
+            alert("获取用户头像失败");
+            window.history.back();
+            return false;
+        }
+    });
+
+    a.push("</a><div class='content'><a href='../user/otherSpace.html?uid=" + e.id + "' target='_blank' class='title'><span>" + e.username + "</span></a>");
+    a.push("<p class='auth-description'>" + e.sign + "</p><div class='fans-action'><div class='fans-action-follow'><span follow-id='"+ e.id + "' class='fans-action-text'>取消关注</span></div> </div>");
+    a.push("</div></li>");
+    var newI = a.join("");
+    a = null;
+    return newI;
+}
+
+function newFanItem(e) {
+    var a=[];
+    a.push("<li class='list-item " + e.id + "'><a href='../user/otherSpace.html?uid=" + e.id + "' target='_blank' class='cover'><img src='");
+    $.ajax({    //获取用户头像
+        type: "GET",
+        url: "http://47.93.139.52:8000/user/uid" + e.id + "/get-avatar",
+        contentType: "application/json;charset=utf-8",
+        async:false,
+        success: function (data) {
+            var ajson = getJson(data);
+            if (ajson[0].code == 200) {
+                var ajjson = getJson(ajson[0].data);
+                if (ajjson[0].file != null) {
+                    var avatarClient = OSS.Wrapper({
+                        accessKeyId: ajjson[0].guest_key,
+                        accessKeySecret: ajjson[0].guest_secret,
+                        bucket: 'pilipili-bucket',
+                        region: 'oss-cn-beijing',
+                        stsToken: ajjson[0].security_token + '',//token
+                    });
+                    a.push(avatarClient.signatureUrl(ajjson[0].file) + "' class='cover'>");
+                }
+                else {
+                    a.push( "../img/null_avatar.png' class='cover'>");
+                }
+            }
+            else {
+                alert("获取用户头像失败");
+                window.history.back();
+                return false;
+            }
+        },
+        error: function (data) {
+            alert("获取用户头像失败");
+            window.history.back();
+            return false;
+        }
+    });
+
+    a.push("</a><div class='content'><a href='../user/otherSpace.html?uid=" + e.id + "' target='_blank' class='title'><span>" + e.username + "</span></a>");
+    a.push("<p class='auth-description'>" + e.sign + "</p>");
+    a.push("</div></li>");
+    var newI = a.join("");
+    a = null;
+    return newI;
+}
+
+//  <li class="list-item">
+//                                     <a href="" target="_blank" class="cover">
+//                                         <img src="" class="cover">
+//                                     </a>
+//                                     <div class="content">
+//                                         <a href="" target="_blank" class="title">
+//                                             <span class="this-is-vip">nightayk</span>
+//                                         </a>
+//                                         <p class="auth-description">没有签名</p>
+//                                         <div class="fans-action">
+//                                             <div class="fans-action-follow">
+//                                                 <span class="fans-action-text">取消关注</span>
+//                                             </div>
+//                                         </div>
+//                                     </div>
+//                                 </li>

@@ -25,7 +25,7 @@
                      </li>-->
                     <li class="nav-link-item" style="padding-left: 100px">
                             <span>
-                               <a href="//www.bilibili.com" class="link">
+                               <a href="../downloadAPP.html" target="_blank" class="link">
                                    <div class="item"><img src="../img/nav_download_app.webp" class="mini-avatar"></div><div class="item">下载APP</div>
                                </a>
                            </span>
@@ -36,7 +36,7 @@
                 <div class="nav-search">
                     <form id="nav_searchform">
                         <div style="display: inline-block">
-                            <input type="text" autocomplete="off" accesskey="s" placeholder="为什么蚊子叮的包这么痒？" class="nav-search-keyword">
+                            <input type="text" autocomplete="off" accesskey="s" placeholder="搜索全站" class="nav-search-keyword">
                         </div>
                         <div class="nav-search-btn">
                             <button type="button" class="nav-search-submit"></button>
@@ -75,7 +75,7 @@
                     </div-->
                     <div class="item">
                         <div class="nav-item">
-                            <a href="" target="_blank"><span class="name">收藏</span> </a>
+                            <a href="userPage.html?to=fav" target="_blank"><span class="name">收藏</span> </a>
                         </div>
                     </div>
                     <!--div class="item">
@@ -208,6 +208,11 @@
                                 <div class="big-member-btn">
                                     开通大会员
                                 </div>
+                                <div class="buy-vip">
+                                    <input class="vip-buy" maxlength="3" placeholder="请输入充值天数" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');if(this.value=='')$('.vip-cost').html('花费 P币');else{$('.vip-cost').html('花费 ' + this.value + 'P币');}">
+                                    <br>
+                                    <span class="vip-cost">花费 P币</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -270,7 +275,7 @@
                                             <p class="line-1">更换</p>
                                             <p class="line-2">头像</p>
                                         </a>
-                                        <img src="../img/test.png" class="face-g-avatar">
+                                        <img class="face-g-avatar">
                                     </div>
                                 </div>
                             </div>
@@ -304,12 +309,12 @@
                                                 </label>
                                             </div>
                                             <form id="upload-avatar" enctype = "multipart/form-data" >
-                                                <input type="file" id="file_input" style="display:none;" accept="image/jpeg,image/png,image/jpg">
+                                                <input type="file" id="file_input" style="display:none;" accept="image/png,image/jpg">
                                             </form>
                                         </div>
                                         <div class="border-line"></div>
                                         <div class="img-preview-wrap">
-                                            <div class="pre-container" style="background-image: url(../img/test.png)"></div>
+                                            <div class="pre-container"></div>
                                             <div class="pre-info">当前头像</div>
                                         </div>
                                         <div class="img-new-wrap" style="display: none">
@@ -336,23 +341,23 @@
                             <div class="form-group">
                                 <div class="pw-input pw-input-group pw-input-group__prepend">
                                     <div class="pw-input-group__prepend">原密码</div>
-                                    <input type="password" autocomplete="off" placeholder="请输入内容" class="pw-input__inner">
+                                    <input type="password" id="old-pw" autocomplete="off" placeholder="请输入内容" class="pw-input__inner">
                                 </div>
-                                <div class="form-message"></div>
+                                <div class="form-message" id="old-pw-m"></div>
                             </div>
                             <div class="form-group">
                                 <div class="pw-input pw-input-group pw-input-group__prepend">
                                     <div class="pw-input-group__prepend">新密码</div>
-                                    <input type="password" autocomplete="off" placeholder="请输入内容" class="pw-input__inner">
+                                    <input type="password" id="new-pw" autocomplete="off" placeholder="请输入内容" class="pw-input__inner">
                                 </div>
-                                <div class="form-message"></div>
+                                <div class="form-message" id="new-pw-m"></div>
                             </div>
                             <div class="form-group">
                                 <div class="pw-input pw-input-group pw-input-group__prepend">
                                     <div class="pw-input-group__prepend">确认密码</div>
-                                    <input type="password" autocomplete="off" placeholder="请输入内容" class="pw-input__inner">
+                                    <input type="password" id="confirm-pw" autocomplete="off" placeholder="请输入内容" class="pw-input__inner">
                                 </div>
-                                <div class="form-message"></div>
+                                <div class="form-message" id="confirm-pw-m"></div>
                             </div>
                             <div class="form-group">
                                 <button type="button" class="pw-button pw-button--primary" style="width: 100%; height: 40px;">
@@ -424,7 +429,7 @@
                                     <div class="trade-wrapper trade-customn">
                                         <div class="tips">自定义P币数量</div>
                                         <div class="enter-wrapper" style="display: none">
-                                            <input id="trade-input" type="text" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');if(this.value=='')$('.trade-customn .enter-tip').html('');else{$('.trade-customn .enter-tip').html('￥' + this.value + '.00');$('.qrpay-content .price p').html(this.value + '.00')}">
+                                            <input id="trade-input" type="text" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');if(this.value=='')$('.s-right-coin .trade-customn .enter-tip').html('');else{$('.s-right-coin .trade-customn .enter-tip').html('￥' + this.value + '.00');$('.qrpay-content .price p').html(this.value + '.00')}">
                                             <div class="enter-tip"></div>
                                         </div>
                                     </div>

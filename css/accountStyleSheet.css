@@ -363,6 +363,14 @@ a {
     border: none;
 }
 
+.big-user-name.user-is-vip{
+    color: #fb7299;
+}
+
+.big-member-btn.user-is-vip{
+    background:#fb7299;
+}
+
 .home-top-level {
     position: relative;
 }
@@ -1347,4 +1355,20 @@ a {
 
 .s-right-pw.right-on{
     display: block;
+}
+
+.buy-vip{
+    display: inline-block;
+    right:20px;
+    position: absolute;
+    bottom: -4px;
+}
+
+.vip-buy{
+    width: 100px;
+    height: 100%;
+}
+
+.vip-cost{
+    width: 200px;
 }

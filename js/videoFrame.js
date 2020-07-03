@@ -1,4 +1,8 @@
 window.onload=function () {
+    if(sessionStorage.getItem("token") == null  ){
+        window.location.href="../user/login.html";
+    }
+
     $(".mini-avatar img").attr("src",sessionStorage.getItem("avatar"));
 
 
@@ -89,8 +93,53 @@ window.onload=function () {
             }
             return false;
         }
-
-        alert($(".el-input__inner").val());
-        alert($(".el-textarea__inner").val());
+        else {
+            $.ajax({
+                type: "POST",
+                data: {"filename": getFileName($(".video-container video").val())},
+                url: 'http://47.93.139.52:8000/video/video-upload-new',
+                headers: {
+                    'Authorization': 'JWT ' + sessionStorage.getItem("token")
+                },
+                dataType: "json",
+                async: false,
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    var json = getJson(data);
+                    if (json[0].code == 200) {
+                        var jjson = getJson(json[0].data);
+                        var videoClient = OSS({
+                            accessKeyId: jjson[0].guest_key + '',
+                            accessKeySecret: jjson[0].guset_secret + '',
+                            bucket: 'pilipili-bucket',
+                            region: 'https://oss-cn-beijing.aliyuncs.com',
+                            stsToken: jjson[0].security_token + '',//token
+                        });
+                        videoClient.multipartUpload(jjson[0].file, $(".video-container video").files[0]);
+                        $.ajax({
+                            type: "POST",
+                            data: {"filename": jjson[0].file},
+                            url: 'http://47.93.139.52:8000/video/cover-new',
+                            headers: {
+                                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+                            },
+                            async: false,
+                            contentType: "application/json;charset=utf-8",
+                            success: function (data) {
+                                window.location.href = "account.html?to=avatar";
+                            },
+                            error: function (data) {
+                                alert("头像上传失败");
+                                return false;
+                            }
+                        });
+                    }
+                },
+                error: function (data) {
+                    alert("头像上传失败");
+                    return false;
+                }
+            });
+        }
     });
 }

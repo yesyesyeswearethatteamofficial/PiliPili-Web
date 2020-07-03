@@ -1,4 +1,9 @@
 window.onload=function(){
+    if(sessionStorage.getItem("token") == null  ){
+        window.location.href="../user/login.html";
+        return false;
+    }
+
     $("#reload").click(function () {
        location.reload();
        return false;
@@ -8,6 +13,7 @@ window.onload=function(){
         type: "GET",
         url: "http://47.93.139.52:8000/video/list-video",
         contentType: "application/json;charset=utf-8",
+        async:false,
         success: function (data) {
             var json = getJson(data);
             if (json[0].code == 200) {

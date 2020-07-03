@@ -1,17 +1,20 @@
 window.onload=function(){
+    if(sessionStorage.getItem("token") == null  ){
+        window.location.href="../user/login.html";
+        return false;
+    }
+
     if(getUrlParam('to') == "vip"){
         $(".s-left .on").removeClass("on router-link-active");
         $(".s-left .s-left-vip").addClass("on router-link-active");
         $(".s-right .right-on").removeClass("right-on");
         $(".s-right .s-right-vip").addClass("right-on");
-        sessionStorage.setItem("toVip","false");
     }
     else if(getUrlParam('to') == "avatar"){
         $(".s-left .on").removeClass("on router-link-active");
         $(".s-left .s-left-avatar").addClass("on router-link-active");
         $(".s-right .right-on").removeClass("right-on");
         $(".s-right .s-right-avatar").addClass("right-on");
-        sessionStorage.setItem("toAvatar","false");
     }
 
     $("title").text(sessionStorage.getItem("username") + "的个人中心");
@@ -32,6 +35,14 @@ window.onload=function(){
     $(".el-input__inner").attr("value",(sessionStorage.getItem("username")));
     $(".home-top-msg-name").html(sessionStorage.getItem("username"));
     $(".big-user-name").html(sessionStorage.getItem("username"));
+
+    if(parseInt(sessionStorage.getItem("vip")) > 0){
+     $(".big-member-btn").html("续费大会员");
+     $(".home-userstatus").html("大会员");
+     $(".home-userstatus").addClass("vip");
+     $(".big-member-btn").addClass("user-is-vip");
+     $(".big-user-name").addClass("user-is-vip");
+    }
 }
 
 $("#file_input").on("change",function (e) {
@@ -57,6 +68,40 @@ $("#file_input").on("change",function (e) {
             $(".img-preview-wrap").css("display","none");
             $(".img-new-wrap").css("display","block");
             $(".modal-footer input").removeClass("disabled");
+            $.ajax({
+                type: "POST",
+                data: JSON.stringify({"filename":getFileName($("#file_input").val())}),
+                url: 'http://47.93.139.52:8000/user/upload-avatar-new',
+                headers: {
+                    'Authorization': 'JWT ' + sessionStorage.getItem("token")
+                },
+                dataType:"json",
+                async:false,
+                contentType: "application/json;charset=utf-8",
+                success:function(data) {
+                    var json = getJson(data);
+                    if (json[0].code == 200) {
+                        var jjson = getJson(json[0].data);
+                        var bjson = getJson(jjson[0].bucket_avatar);
+                        var avatarClient = OSS({
+                            accessKeyId: bjson[0].guest_key,
+                            accessKeySecret: bjson[0].guest_secret,
+                            bucket: 'pilipili-bucket',
+                            region: 'oss-cn-beijing',
+                            stsToken: bjson[0].security_token + '',//token
+                        });
+                        avatarClient.multipartUpload(bjson[0].file,file);
+                        avatarClient.put(bjson[0].file,file);
+                        sessionStorage.setItem("upload-avatar", bjson[0].file)
+                    }
+                    else{
+                        alert("头像上传失败");
+                    }
+                },
+                error:function (data) {
+                    alert("头像上传失败");
+                }
+            });
         }
     }
     else {
@@ -156,63 +201,158 @@ $(".more-btn").click(function () { //购买硬币
     });
 });
 
-/*$(".modal-btn").click(function () {
-   var formData = new FormData();
-    formData.append('content',$("#upload-avatar")[0]);
-   $.ajax({
-       type: "POST",
-       data: formData,
-       url: 'http://47.93.139.52:8000/user/upload-avatar',
-       headers: {
-           'Authorization': 'JWT ' + sessionStorage.getItem("token")
-       },
-       contentType: false,
-       processData: false,
-       success:function(data){
-           var json = getJson(data);
-           if(json[0].code==200){
-               var jjson = getJson(json[0].data);
-               alert("上传成功");
-               $.ajax({    //获取用户头像
-                   type: "GET",
-                   url: "http://47.93.139.52:8000/user/uid"+ sessionStorage.getItem("uid") + "/get-avatar",
-                   contentType: "application/json;charset=utf-8",
-                   success: function (data) {
-                       var json = getJson(data);
-                       if (json[0].code == 200) {
-                           var jjson = getJson(json[0].data);
-                           if(jjson[0].file != null) {
-                               var avatarClient = OSS({
-                                   accessKeyId: jjson[0].guest_key + '',
-                                   accessKeySecret: jjson[0].guset_secret + '',
-                                   bucket: 'pilipili-bucket',
-                                   region: 'https://oss-cn-beijing.aliyuncs.com',
-                                   stsToken: jjson[0].security_token + '',//token
-                               });
-                               sessionStorage.setItem("avatar",avatarClient.getObjectUrl(jjson[0].file));
-                           }
-                           else{
-                               sessionStorage.setItem("avatar","../img/null_avatar.png");
-                           }
-                       }
-                   },
-                   error: function (data) {
-                       var json = getJson(data);
-                       alert(json[0].message);
-                   }
-               });
-           }
-           else{
-
-           }
-       },
-       error:function (data) {
-           var json = getJson(data);
-
+$(".big-member-btn").click(function () {
+   if($(".vip-buy").val() != ""){
+       var cost = parseInt($(".vip-buy").val());
+       if(cost > parseInt(sessionStorage.getItem("coins"))){
+           alert("硬币余额不足，请充值");
        }
+       else {
+           $.ajax({
+               type: "POST",
+               url: "http://47.93.139.52:8000/user/put-vip",
+               contentType: "application/json;charset=utf-8",
+               dataType: "json",
+               data: JSON.stringify({"coins": cost, "vip": cost}),
+               headers: {
+                   'Authorization': 'JWT ' + sessionStorage.getItem("token")
+               },
+               success: function (data) {
+                   var json = getJson(data);
+                   if (json[0].code == 200) {
+                       var jjson = getJson(json[0].data);
+                       sessionStorage.setItem("coins", jjson[0].coins);
+                       sessionStorage.setItem("vip",jjson[0].vip);
+                       window.location.href="account.html?to=vip";
+                   }
+                   else {
+                       alert("大会员购买失败");
+                   }
+               },
+               error: function (data) {
+                   alert("大会员购买失败");
+               }
+           });
+       }
+   }
+});
 
-   });
-});*/
+$(".s-right-pw .pw-button").click(function () {
+    var submit = true;
+
+    if($("#old-pw").val()==""){
+        submit = false;
+        $("#old-pw-m").html("原密码不能为空");
+    }
+    else if($("#old-pw").val() == sessionStorage.getItem("pw")){
+        $("#old-pw-m").html("");
+    }
+    else{
+        submit = false;
+        $("#old-pw-m").html("密码错误");
+    }
+
+    if($("#new-pw").val()==""){
+        submit = false;
+        $("#new-pw-m").html("新密码不能为空");
+    }
+    else {
+        $("#new-pw-m").html("");
+    }
+
+    if($("#new-pw").val() == $("#confirm-pw").val()){
+        $("#confirm-pw-m").html("");
+    }
+    else{
+        $("#confirm-pw-m").html("密码不一致");
+        submit = false;
+    }
+
+    if(submit){
+        $.ajax({
+            type:"POST",
+            url:"http://47.93.139.52:8000/user/put-password",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            data:JSON.stringify({"password":$("#new-pw").val()}),
+            headers: {
+                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+            },
+            success:function (data) {
+                var json = getJson(data);
+                if(json[0].code==200){
+                    sessionStorage.setItem("pw",$("#new-pw").val());
+                    alert("密码修改成功");
+                    window.location.href="account.html";
+                }
+                else{
+                    $("#p-tip").html(json[0].message);
+                    alert("密码修改失败");
+                }
+            },
+            error:function (data) {
+                alert("密码修改失败");
+            }
+        });
+    }
+    else {
+    }
+});
+
+$(".modal-btn").click(function () {
+    $.ajax({
+            type: "POST",
+            data: JSON.stringify({"file": sessionStorage.getItem("upload-avatar")}),
+            url: 'http://47.93.139.52:8000/user/upload-avatar-success',
+            headers: {
+                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+            },
+            async: false,
+            contentType: "application/json;charset=utf-8",
+            success: function () {
+                $.ajax({    //获取用户头像
+                    type: "GET",
+                    url: "http://47.93.139.52:8000/user/uid" + sessionStorage.getItem("uid") + "/get-avatar",
+                    contentType: "application/json;charset=utf-8",
+                    async:false,
+                    success: function (data) {
+                        var json = getJson(data);
+                        if (json[0].code == 200) {
+                            var jjson = getJson(json[0].data);
+                            if (jjson[0].file != null) {
+                                var avatarClient = OSS({
+                                    accessKeyId: jjson[0].guest_key,
+                                    accessKeySecret: jjson[0].guset_secret,
+                                    bucket: 'pilipili-bucket',
+                                    region: 'oss-cn-beijing',
+                                    stsToken: jjson[0].security_token + '',//token
+                                });
+                                sessionStorage.setItem("avatar", avatarClient.signatureUrl(jjson[0].file));
+                            }
+                            else {
+                                sessionStorage.setItem("avatar", "../img/null_avatar.png");
+                            }
+                        }
+                        else {
+                            alert("获取用户头像失败");
+                            window.history.back();
+                            return false;
+                        }
+                    },
+                    error: function (data) {
+                        alert("获取用户头像失败");
+                        window.history.back();
+                        return false;
+                    }
+                });
+                window.location.href = "account.html?to=avatar";
+            },
+            error: function () {
+                alert("头像上传失败");
+            }
+        });
+
+});
 
 $(".reset-img label").click(function () {
     $(".img-container img").attr("src","");
