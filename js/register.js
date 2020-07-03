@@ -54,17 +54,22 @@ window.onload=function () {
           $.ajax({
               type:"POST",
               url:"http://47.93.139.52:8000/user/register",
-              contentType: false,
+              contentType: "application/json;charset=utf-8",
               dataType: "json",
               data:JSON.stringify({"email":$("#email").val(),"username":$("#uname").val(),"password":$("#pw").val()}),
               success:function (data) {
                   var json = getJson(data);
-
-                  $(".register-success").html("注册成功：");
-                  $("#to-login").html("点我返回登录界面");
+                  if(json[0].code == 200) {
+                      $(".register-success").html("注册成功：");
+                      $("#to-login").html("点我返回登录界面");
+                  }
+                  else{
+                      $("#register-error").html(json[0].message+",");
+                      $("#error-reload").html("请点击重试");
+                  }
               },
               error:function (data) {
-                  var json = getErrJson(data);
+                  var json = getJson(data);
                   $("#register-error").html(json[0].message+",");
                   $("#error-reload").html("请点击重试");
               }

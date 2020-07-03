@@ -7,7 +7,6 @@ window.onload=function () {
 
     if(sessionStorage.getItem("fromLogin") == "true") {
         sessionStorage.setItem("token", getUrlParam('token'));
-        return false;
     }
 
     $.ajax({    //获取用户个人信息

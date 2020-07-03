@@ -18,7 +18,6 @@ $(".ops #likeVideo").click(function () {    //点赞&取消点赞
                 }
                 else {
                     alert("点赞失败（网络原因），请重试");
-                    window.history.back();
                     return false;
                 }
 
@@ -26,7 +25,6 @@ $(".ops #likeVideo").click(function () {    //点赞&取消点赞
             },
             error: function (data) {
                 alert("点赞失败（网络原因），请重试");
-                window.history.back();
                 return false;
             }
         });
@@ -50,7 +48,6 @@ $(".ops #likeVideo").click(function () {    //点赞&取消点赞
                 }
                 else {
                     alert("取消点赞失败（网络原因），请重试");
-                    window.history.back();
                     return false;
                 }
 
@@ -58,7 +55,6 @@ $(".ops #likeVideo").click(function () {    //点赞&取消点赞
             },
             error: function (data) {
                 alert("取消点赞失败（网络原因），请重试");
-                window.history.back();
                 return false;
             }
         });
@@ -85,7 +81,6 @@ $(".ops #stowVideo").click(function () {    //收藏&取消收藏
                 }
                 else {
                     alert("收藏失败（网络原因），请重试");
-                    window.history.back();
                     return false;
                 }
 
@@ -93,7 +88,6 @@ $(".ops #stowVideo").click(function () {    //收藏&取消收藏
             },
             error: function (data) {
                 alert("收藏失败（网络原因），请重试");
-                window.history.back();
                 return false;
             }
         });
@@ -117,7 +111,6 @@ $(".ops #stowVideo").click(function () {    //收藏&取消收藏
                 }
                 else {
                     alert("取消收藏失败（网络原因），请重试");
-                    window.history.back();
                     return false;
                 }
 
@@ -125,7 +118,6 @@ $(".ops #stowVideo").click(function () {    //收藏&取消收藏
             },
             error: function (data) {
                 alert("取消收藏失败（网络原因），请重试");
-                window.history.back();
                 return false;
             }
         });
@@ -154,7 +146,6 @@ $(".up-info .btn-panel .default-btn").click(function () {
                    }
                    else {
                        alert("取消关注失败（网络原因），请重试");
-                       window.history.back();
                        return false;
                    }
 
@@ -162,7 +153,6 @@ $(".up-info .btn-panel .default-btn").click(function () {
                },
                error: function (data) {
                    alert("取消关注失败（网络原因），请重试");
-                   window.history.back();
                    return false;
                }
            });
@@ -189,7 +179,6 @@ $(".up-info .btn-panel .default-btn").click(function () {
                }
                else {
                    alert("关注失败（网络原因），请重试");
-                   window.history.back();
                    return false;
                }
 
@@ -197,7 +186,6 @@ $(".up-info .btn-panel .default-btn").click(function () {
            },
            error: function (data) {
                alert("关注失败（网络原因），请重试");
-               window.history.back();
                return false;
            }
        });
@@ -224,7 +212,6 @@ $(".ops #coinVideo").click(function () {
             }
             else {
                 alert("投币失败（网络原因），请重试");
-                window.history.back();
                 return false;
             }
 
@@ -232,8 +219,42 @@ $(".ops #coinVideo").click(function () {
         },
         error: function (data) {
             alert("投币失败（网络原因），请重试");
-            window.history.back();
             return false;
         }
     });
+});
+
+$(".comment-submit").click(function () {
+    if($(".textarea-container textarea").val() == ""){
+        return false;
+    }
+    else{
+        $.ajax({
+            type: "POST",
+            url: "http://47.93.139.52:8000/video/pv" + getUrlParam('pid') + "/comment",
+            contentType: "application/json;charset=utf-8",
+            async:false,
+            headers: {
+                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+            },
+            data:JSON.stringify({'comment':$(".textarea-container textarea").val()}),
+            success: function (data) {
+                var json = getJson(data);
+                if (json[0].code == 200) {
+                    var jjson = getJson(json[0].data);
+                    $(".comment .b-head .results").html(parseInt($(".comment .b-head .results").html()) + 1);
+                }
+                else {
+                    alert("评论失败（网络原因），请重试");
+                    return false;
+                }
+
+
+            },
+            error: function (data) {
+                alert("评论失败（网络原因），请重试");
+                return false;
+            }
+        });
+    }
 });

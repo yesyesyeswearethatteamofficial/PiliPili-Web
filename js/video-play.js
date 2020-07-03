@@ -304,7 +304,8 @@ window.onload=function() {
         $(".pilipili-player-video-state").css("display", "block");
     })
 
-    $("#danmup .danmu-div").danmu("addDanmu", danmuList);
-
+    if(danmuList.length > 0) {
+        $("#danmup .danmu-div").danmu("addDanmu", danmuList);
+    }
 
 }

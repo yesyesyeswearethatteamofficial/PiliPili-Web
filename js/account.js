@@ -139,34 +139,40 @@ $("#changeSign").click(function () {    //修改签名
 });
 
 $("#changeName").click(function () { //修改昵称
-    $.ajax({
-        type: "POST",
-        url: "http://47.93.139.52:8000/user/put-username",
-        contentType: "application/json;charset=utf-8",
-        dataType: "json",
-        data:JSON.stringify({"username":$(".el-input__inner").val(),"cost":6}),
-        headers: {
-            'Authorization': 'JWT ' + sessionStorage.getItem("token")
-        },
-        success: function (data) {
-            var json = getJson(data);
-            if (json[0].code == 200) {
-                var jjson = getJson(json[0].data);
-                sessionStorage.setItem("username",jjson[0].username);
-                sessionStorage.setItem("coins",jjson[0].coins);
-                $(".curren-b-num").html(sessionStorage.getItem("coins"));
-                $(".balance-price").html(sessionStorage.getItem("coins"));
-            }
-            else{
+    if($(".el-input__inner").val() == sessionStorage.getItem("username")){
+        return false;
+    }
+    else {
+        $.ajax({
+            type: "POST",
+            url: "http://47.93.139.52:8000/user/put-username",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({"username": $(".el-input__inner").val(), "cost": 6}),
+            headers: {
+                'Authorization': 'JWT ' + sessionStorage.getItem("token")
+            },
+            success: function (data) {
+                var json = getJson(data);
+                if (json[0].code == 200) {
+                    var jjson = getJson(json[0].data);
+                    sessionStorage.setItem("username", jjson[0].username);
+                    sessionStorage.setItem("coins", jjson[0].coins);
+                    $(".curren-b-num").html(sessionStorage.getItem("coins"));
+                    $(".balance-price").html(sessionStorage.getItem("coins"));
+                    $(".home-top-msg-name").html($(".el-input__inner").val());
+                }
+                else {
+                    alert("昵称修改失败");
+                    location.reload();
+                }
+            },
+            error: function (data) {
                 alert("昵称修改失败");
                 location.reload();
             }
-        },
-        error: function (data) {
-            alert("昵称修改失败");
-            location.reload();
-        }
-    });
+        });
+    }
 });
 
 $(".more-btn").click(function () { //购买硬币

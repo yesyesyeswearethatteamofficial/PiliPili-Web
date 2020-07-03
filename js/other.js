@@ -218,9 +218,7 @@ window.onload=function () {
                     success: function (data) {
                         var json = getJson(data);
                         if (json[0].code == 200) {
-                            $(".follow-this").removeClass("followed");
-                            $(".follow-this").addClass("unfollow");
-                            $(".follow-this").html("关注用户");
+                            window.location.reload();
                         }
                         else {
                             alert("取消关注失败（网络原因），请重试");
@@ -245,10 +243,7 @@ window.onload=function () {
                 success: function (data) {
                     var json = getJson(data);
                     if (json[0].code == 200) {
-                        var jjson = getJson(json[0].data);
-                        $(".follow-this").addClass("followed");
-                        $(".follow-this").removeClass("unfollow");
-                        $(".follow-this").html("取消关注");
+                        window.location.reload();
                     }
                     else {
                         alert("关注失败（网络原因），请重试");
