@@ -1,8 +1,10 @@
 ﻿window.onload=function () {
     if(sessionStorage.getItem('page') == "NaN"){
-        sessionStorage.setItem("page",1);
+        sessionStorage.setItem("page",0);
+        location.reload();
         return false;
     }
+
 }
 
 var cypSwiper = new Swiper('#downCont', {
