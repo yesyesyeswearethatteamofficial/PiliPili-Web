@@ -10,26 +10,6 @@ function stable($var) {
     }
 }
 
-function beta_versions() {
-    $.ajax({
-        type: "GET",
-        url: "api/beta/versions",
-        dataType: "json",
-        success: function (data) {
-            if (data.error) {
-                alert(data.error);
-            } else {
-                $('#beta_versions').children('.list').empty();
-                $.each(data, function (i) {
-                    var name = data[i]['os_version'];
-                    console.log(name);
-                    $('#beta_versions').children('.list').append("<div class=\"select-beta-devices-type\"> <div class=\"btn left big broad\"><a href=\"javascript:;\" onclick=\"beta_devices('" + name + "')\">" + name + "</a></div></div>");
-                });
-            }
-        }
-    });
-}
-
 function beta_devices_list($var) {
     $.ajax({
         type: "GET",

@@ -61,24 +61,4 @@
             jsonp: "jsonpcallback"
         });
     },
-    //写cookies
-    SetCookie: function () {
-        var guid = monitor.GetGuid();
-        document.cookie = monitor._sessionName + "=" + escape(guid);
-        return guid;
-    },
-    //读取cookies
-    GetCookie: function () {
-        var arr, reg = new RegExp("(^| )" + monitor._sessionName + "=([^;]*)(;|$)");
-        if (arr = document.cookie.match(reg)) return unescape(arr[2]);
-        else {
-            return monitor.SetCookie();
-        }
-    },
-    GetGuid: function () {
-        var S4 = function () {
-            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-        };
-        return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
-    }
 };

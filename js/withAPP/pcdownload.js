@@ -1,8 +1,16 @@
-﻿var cypSwiper = new Swiper('#downCont', {
+﻿window.onload=function () {
+    if(sessionStorage.getItem('page') == "NaN"){
+        sessionStorage.setItem("page",1);
+        return false;
+    }
+}
+
+var cypSwiper = new Swiper('#downCont', {
     loop: true,
     onSlideChangeEnd: function (cypSwiper) {
         var index = cypSwiper.realIndex;
-        $(".down_nav li").removeClass("active").eq(index).addClass("active");
+        $(".down_pic img").attr("src","img/phoneUI" + ((parseInt(sessionStorage.getItem('page')) % 4) + 1) + ".jpg");
+        sessionStorage.setItem("page",(parseInt(sessionStorage.getItem('page')) % 4) + 1);
     }
 });
 
@@ -30,3 +38,4 @@ $(function () {
         });
     });
 });
+
